@@ -1,9 +1,9 @@
 public class Hardware {
   /*Instruction set
    * = any instruction
-   $ = an exit instruction
-   d = data like static variables / constants
-   A program will look like this:
+    $ = an exit instruction
+    d = data like static variables / constants
+    A program will look like this:
    *******$dddd
    */
 

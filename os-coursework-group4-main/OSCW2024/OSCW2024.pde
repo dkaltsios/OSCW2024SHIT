@@ -20,7 +20,7 @@ void setup(){
   //Arguments: Name, Code, IRQ
   myOS.addToKernel(new IdleKernel("idle", "I", 5));
   //Arguments: Name, Code, IRQ, Memory manager Algorithm
-  myOS.addToKernel(new MemoryManagerKernel("memoryManager", "*M", 3, new DefaultMM()));
+  myOS.addToKernel(new MemoryManagerKernel("memoryManager", "*M", 3, new WorstFitMM()));
   //Arguments: Name, Code, IRQ
   myOS.addToKernel(new CreateProcessKernel("createProcess", "C", 2));
   //Arguments: Name, Code, IRQ
