@@ -47,7 +47,6 @@ public class OperatingSystem {
     kernel.put(k.reference, k);
     kernelImage = k.compileTo(kernelImage);  
   }
-
   public void boot() {
     sim.addToLog(" >myOS: Booting OS");
     int partitionBA = 0;
