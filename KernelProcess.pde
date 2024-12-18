@@ -174,7 +174,7 @@ public class ExitProcessKernel extends KernelProcess{
 
 public class CoalesceKernel extends KernelProcess{
   //private int deleteProcessBA;
-  CoalesceKernel(String name, String code, int IRQ, int ba) {
+  CoalesceKernel(String name, String code, int IRQ) {
     super(name, code, IRQ);
     //deleteProcessBA = ba;
   }
