@@ -163,8 +163,8 @@ public class ExitProcessKernel extends KernelProcess{
     myOS.emptyPartition(myOS.deleteProcess.baseAddress);
     myOS.processTable.remove(myOS.deleteProcess);
     sim.addToLog("  >Exit: finished exiting process " + myOS.deleteProcess.pid + ". Starting scheduler");
-    CoalesceKernel coalesce = new CoalesceKernel(reference,code,IRQnum,myOS.deleteProcess.baseAddress);
-    coalesce.finish();
+    //CoalesceKernel coalesce = new CoalesceKernel(reference,code,IRQnum,myOS.deleteProcess.baseAddress);
+    //coalesce.finish();
     myOS.deleteProcess = null;
     myOS.startKernelProcess("scheduler");
     this.state = STATE.READY;
@@ -173,15 +173,21 @@ public class ExitProcessKernel extends KernelProcess{
 }
 
 public class CoalesceKernel extends KernelProcess{
-  private int deleteProcessBA;
+  //private int deleteProcessBA;
   CoalesceKernel(String name, String code, int IRQ, int ba) {
     super(name, code, IRQ);
-    deleteProcessBA = ba;
+    //deleteProcessBA = ba;
   }
-  
+  /*
   public void finish() {
     // We store previous, current and next partitions 
     Partition currentPartition = myOS.searchPartitionTable(deleteProcessBA);
+    // Ensure that the partition is not null
+    if (currentPartition == null) {
+      sim.addToLog("  >Coalesce: No partition found for base address " + deleteProcessBA);
+      return;
+    }
+    // Get the previous and next partitions
     Partition previousPartition = null;
     Partition nextPartition = null;
     
@@ -196,16 +202,42 @@ public class CoalesceKernel extends KernelProcess{
       previousPartition.size += currentPartition.size + nextPartition.size;
       myOS.partitionTable.remove(currentPartition);
       myOS.partitionTable.remove(nextPartition);
+      sim.addToLog("  >Coalesce: Merged previous, current, and next partitions.");
     } else if (isPreviousFree(previousPartition)) {
       // Merge partitions previous with current
       previousPartition.size += currentPartition.size;  
       myOS.partitionTable.remove(currentPartition);  
+      sim.addToLog("  >Coalesce: Merged previous and current partitions.");
     } else if (isNextFree(nextPartition)) {
       // Merge partitions next with current
       currentPartition.size += nextPartition.size;
       myOS.partitionTable.remove(nextPartition);
+      sim.addToLog("  >Coalesce: Merged current and next partitions.");
+    } else {
+      sim.addToLog("  >Coalesce: No adjacent free partitions to merge.");
     }
+    // Change its state to ready
+    this.state = STATE.READY;
   }
+  */
+  public void finish() {
+    // Iterate through the partition table to find and merge adjacent free partitions
+    for (int i = 0; i < myOS.partitionTable.size() - 1; i++) {
+      Partition currentPartition = myOS.partitionTable.get(i);
+      Partition nextPartition = myOS.partitionTable.get(i + 1);
+      
+      if (currentPartition.isFree && nextPartition.isFree) {
+        // Merge current and next partitions
+        currentPartition.size += nextPartition.size;
+        myOS.partitionTable.remove(nextPartition);
+        i--; // Adjust index to recheck the current partition with the next one
+        sim.addToLog("  >Coalesce: Merged partitions at index " + i + " and " + (i + 1));
+      }
+    }
+    // Change its state to ready
+    this.state = STATE.READY;
+  }
+
   
   private boolean isNotFirst(Partition currentPartition) {
     return myOS.partitionTable.indexOf(currentPartition) > 0;

@@ -35,7 +35,7 @@ public class ShortestJobFirstScheduler extends ShortTermScheduler{
   
   ShortestJobFirstScheduler() {
     super();
-    type = SDLRTYPE.NONPREEMPTIVE;
+    type = SDLRTYPE.PREEMPTIVE;
   }
   
   public UserProcess selectUserProcess() {

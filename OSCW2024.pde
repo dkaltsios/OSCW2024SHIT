@@ -29,6 +29,8 @@ void setup(){
   myOS.addToKernel(new SchedulerKernel("scheduler", "S", 4, new ShortestJobFirstScheduler()));
   //Arguments: Name, Code, IRQ, scheduler Algorithm
   myOS.addToKernel(new ExitProcessKernel("exitProcess", "X", 6));
+  //Arguments: Name, Code, IRQ
+  myOS.addToKernel(new CoalesceKernel("coalesce", "N", 7));
   sim = new Simulator();
   sim.setupSimulation();
 }

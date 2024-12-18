@@ -112,6 +112,10 @@ public class OperatingSystem {
       sim.contextSwitchTime+=2;
       sim.addToLog(" >myOS: Finished exiting program "+myOS.active.pid);
       finishKernelProcess("exitProcess");
+    }else if(instruction == kernel.get("coalesce").completeInstruction){
+      sim.contextSwitchTime+=2;
+      sim.addToLog(" >myOS: Finished coalescing partitions");
+      finishKernelProcess("coalesce");
     }else{
       sim.addToLog(" >myOS: ERROR 101 Undefined instruction");
     }
