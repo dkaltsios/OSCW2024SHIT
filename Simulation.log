@@ -29,7 +29,7 @@
 ============== SIMULATION STEP 10 ==============
 >myPC: At time 10 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 9was found.Starting Process Creator
 ============== SIMULATION STEP 11 ==============
 >myPC: At time 11 fetched a C
 ============== SIMULATION STEP 12 ==============
@@ -69,7 +69,7 @@
 ============== SIMULATION STEP 24 ==============
 >myPC: At time 24 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 26 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 26was found.Starting Process Creator
 ============== SIMULATION STEP 25 ==============
 >myPC: At time 25 fetched a C
 ============== SIMULATION STEP 26 ==============
@@ -102,7 +102,7 @@
 ============== SIMULATION STEP 34 ==============
 >myPC: At time 34 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 50 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 50was found.Starting Process Creator
 ============== SIMULATION STEP 35 ==============
 >myPC: At time 35 fetched a C
 ============== SIMULATION STEP 36 ==============
@@ -139,7 +139,7 @@
 ============== SIMULATION STEP 46 ==============
 >myPC: At time 46 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 84 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 84was found.Starting Process Creator
 ============== SIMULATION STEP 47 ==============
 >myPC: At time 47 fetched a C
 ============== SIMULATION STEP 48 ==============
@@ -163,7 +163,7 @@
 ============== SIMULATION STEP 54 ==============
 >myPC: At time 54 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 101 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 101was found.Starting Process Creator
 ============== SIMULATION STEP 55 ==============
 >myPC: At time 55 fetched a C
 ============== SIMULATION STEP 56 ==============
@@ -200,7 +200,7 @@
 ============== SIMULATION STEP 66 ==============
 >myPC: At time 66 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 125 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 125was found.Starting Process Creator
 ============== SIMULATION STEP 67 ==============
 >myPC: At time 67 fetched a C
 ============== SIMULATION STEP 68 ==============
@@ -224,7 +224,7 @@
 ============== SIMULATION STEP 74 ==============
 >myPC: At time 74 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 159 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 159was found.Starting Process Creator
 ============== SIMULATION STEP 75 ==============
 >myPC: At time 75 fetched a C
 ============== SIMULATION STEP 76 ==============
@@ -260,8 +260,8 @@
 ============== SIMULATION STEP 86 ==============
 >myPC: At time 86 executed a N
  >myOS: Coalesce partition 9
-  >Coalesce: No adjacent free partitions to merge.
-  >Coalesce: Finished coalescing partition 9. Starting Process Scheduler
+  >Coalesce : No adjacent free partitions to merge.
+  >Coalesce: Finished coalescing partition 9.Starting Process Scheduler
 ============== SIMULATION STEP 87 ==============
 >myPC: At time 87 fetched a S
 ============== SIMULATION STEP 88 ==============
@@ -321,8 +321,8 @@
 ============== SIMULATION STEP 112 ==============
 >myPC: At time 112 executed a N
  >myOS: Coalesce partition 26
-  >Coalesce: Merged previous partition with current.
-  >Coalesce: Finished coalescing partition 26. Starting Process Scheduler
+  >Coalesce : Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 26.Starting Process Scheduler
 ============== SIMULATION STEP 113 ==============
 >myPC: At time 113 fetched a S
 ============== SIMULATION STEP 114 ==============
@@ -345,7 +345,7 @@
 ============== SIMULATION STEP 120 ==============
 >myPC: At time 120 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 9was found.Starting Process Creator
 ============== SIMULATION STEP 121 ==============
 >myPC: At time 121 fetched a C
 ============== SIMULATION STEP 122 ==============
@@ -360,4 +360,4 @@
   >Process Admitter: Admitted process 15 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 125 ==============
 >myPC: At time 125 fetched a S
-==============
+============== SIMULAT
