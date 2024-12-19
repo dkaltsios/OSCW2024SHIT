@@ -303,27 +303,18 @@ public class CompactKernel extends KernelProcess{
   
   public void finish() {
     int currentBA = myOS.partitionTable.get(0).baseAddress;
-    ArrayList<Partition> newPartitionTable = new ArrayList<Partition>();
-    for (int i = 0; i < myOS.partitionTable.size(); i++) {
-      if (!myOS.partitionTable.get(i).isFree) {
-        Partition p = myOS.partitionTable.get(i);
+    int freeSize = 0;
+    for (Partition p : myOS.partitionTable) {
+      if (!p.isFree) {
         p.baseAddress = currentBA;
         findProcess(p.baseAddress).baseAddress = currentBA;
-        newPartitionTable.add(p);
         currentBA = p.baseAddress + p.size;
-      } 
-    }
-    for (int i = 0; i < myOS.partitionTable.size(); i++) {
-      if (myOS.partitionTable.get(i).isFree) {
-        Partition p = myOS.partitionTable.get(i);
-        p.baseAddress = currentBA;
-        newPartitionTable.add(p);
-        currentBA = p.baseAddress + p.size;
+      } else {
+        freeSize += p.size;
+        myOS.partitionTable.remove(p);
       }
-      sim.addToLog(newPartitionTable.toString());
-      sim.addToLog(myOS.partitionTable.toString());
     }
-    myOS.partitionTable = newPartitionTable;
+    myOS.partitionTable.add(new Partition(currentBA, freeSize));
     sim.addToLog("  >Compact: Partitions compacted. Starting Process Scheduler");
     myOS.startKernelProcess("scheduler");
     this.state = STATE.READY;
