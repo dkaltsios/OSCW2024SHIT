@@ -109,70 +109,70 @@ public class SRTNScheduler extends ShortTermScheduler{
 // First Fit Memory Manager
 // Pick the first partition that fits the process size
 public class FirstFitMM extends MemoryManagerAlgorithm{
-    
-    FirstFitMM() {
-        super();
-        type = MMANAGERTYPE.VARIABLE;
+  
+  FirstFitMM() {
+    super();
+    type = MMANAGERTYPE.VARIABLE;
+  }
+  
+  public Partition selectPartition() {
+    Partition result = null;
+    for (int i = 1; i < myOS.partitionTable.size(); i++) {
+      if (myOS.partitionTable.get(i).isFree && myOS.partitionTable.get(i).size >= myOS.newProcessImage.length()) {
+        result = myOS.partitionTable.get(i);
+        result.isFree = false;
+        break;
+      }
     }
-    
-    public Partition selectPartition() {
-        Partition result = null;
-        for (int i = 1; i < myOS.partitionTable.size(); i++) {
-            if (myOS.partitionTable.get(i).isFree && myOS.partitionTable.get(i).size >= myOS.newProcessImage.length()) {
-                result = myOS.partitionTable.get(i);
-                result.isFree = false;
-                break;
-            }
-        }
-        if (result != null) {
-            if (result.size > myOS.newProcessImage.length()) splitPartition(result, myOS.newProcessImage.length());
-            sim.addToLog("  >Memory Manager : Partition with BA : " + result.baseAddress + "was found.Starting Process Creator");
-            myOS.raiseIRQ("createProcess");
-        } else{
-            sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
-            sim.requestFails++;
-            // Moved to compact kernel
-            // myOS.raiseIRQ("scheduler");
-            myOS.raiseIRQ("compact");
-        }
-        return result;
+    if (result != null) {
+      if (result.size > myOS.newProcessImage.length()) splitPartition(result, myOS.newProcessImage.length());
+      sim.addToLog("  >Memory Manager : Partition with BA : " + result.baseAddress + " was found.Starting Process Creator");
+      myOS.raiseIRQ("createProcess");
+    } else{
+      sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
+      sim.requestFails++;
+      // Moved to compact kernel
+      myOS.raiseIRQ("scheduler");
+      // myOS.raiseIRQ("compact");
     }
-    
+    return result;
+  }
+  
 }
 
 ///////////////////////////////////////////////////////////////
 // Best Fit Memory Manager
 // Pick the biggest partition that fits the process size
 public class WorstFitMM extends MemoryManagerAlgorithm{
-    
-    WorstFitMM() {
-        super();
-        type = MMANAGERTYPE.VARIABLE;
+  
+  WorstFitMM() {
+    super();
+    type = MMANAGERTYPE.VARIABLE;
+  }
+  
+  public Partition selectPartition() {
+    Partition result = null;
+    int maxSize = 0;
+    for (int i = 0; i < myOS.partitionTable.size(); i++) {
+      if (myOS.partitionTable.get(i).isFree && maxSize < myOS.partitionTable.get(i).size && myOS.partitionTable.get(i).size >= myOS.newProcessImage.length()) {
+        result = myOS.partitionTable.get(i);
+        maxSize = result.size;
+      }
     }
-    
-    public Partition selectPartition() {
-        Partition result = null;
-        int maxSize = 0;
-        for (int i = 0; i < myOS.partitionTable.size(); i++) {
-            if (myOS.partitionTable.get(i).isFree && maxSize < myOS.partitionTable.get(i).size && myOS.partitionTable.get(i).size >= myOS.newProcessImage.length()) {
-                result = myOS.partitionTable.get(i);
-                maxSize = result.size;
-            }
-        }
-        if (result != null) {
-            if (result.size > myOS.newProcessImage.length()) splitPartition(result, myOS.newProcessImage.length());
-            result.isFree = false;
-            sim.addToLog("  >Memory Manager : Partition with BA : " + result.baseAddress + " was found.Starting Process Creator");
-            myOS.raiseIRQ("createProcess");
-        } else{
-            sim.addToLog("  >Memory Manager : No partition was found.Starting Compact Kernel");
-            sim.requestFails++;
-            // Moved to compact kernel
-            // myOS.raiseIRQ("scheduler");
-            myOS.raiseIRQ("compact");
-        }
-        return result;
+    if (result != null) {
+      if (result.size > myOS.newProcessImage.length()) splitPartition(result, myOS.newProcessImage.length());
+      result.isFree = false;
+      sim.addToLog("  >Memory Manager: Partition with BA: " + result.baseAddress + " was found. Starting Process Creator");
+      myOS.raiseIRQ("createProcess");
+    } else{
+      sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
+      sim.requestFails++;
+      // Moved to compact kernel
+      myOS.raiseIRQ("scheduler");
+      // myOS.raiseIRQ("compact");
     }
+    return result;
+  }
 }
 
 // Split the selected partition into two partitions with the process size and the remaining size
@@ -297,48 +297,83 @@ public class CoalesceKernel extends KernelProcess{
 ///////////////////////////////////////////////////////////////
 // Compact Kernel
 public class CompactKernel extends KernelProcess{
-    CompactKernel(String name, String code, int IRQ) {
-        super(name, code, IRQ);
-    }
-    
-    public void finish() {
-        int i = 1;
-        int currentBA = myOS.partitionTable.get(i).baseAddress;
-        int freeSize = 0;
-        
-        // Handle non-free partitions
-        while(i < myOS.partitionTable.size()) {
-            Partition p = myOS.partitionTable.get(i);
-            if (!p.isFree) {
-                p.baseAddress = currentBA;
-                sim.addToLog("" + currentBA);
-                UserProcess process = findProcess(p.baseAddress);
-                // Add the base address to the process
-                if (process != null) {
-                    process.baseAddress = currentBA;
-                }
-                currentBA += p.size;
-                i++;
-            } else {
-                freeSize += p.size;
-                myOS.partitionTable.remove(p);
-            }
-            sim.addToLog("Heloooooooooooooooooooo");
+  CompactKernel(String name, String code, int IRQ) {
+    super(name, code, IRQ);
+  }
+  
+  public void finish() {
+    int currentBA = myOS.partitionTable.get(0).baseAddress;
+    ArrayList<Partition> partitionTable = myOs.partitionTable;
+
+    // Compact partitions
+    sort(partitionTable);
+    mergePartitions(partitionTable);
+
+
+    // Log the final partition tables once
+    sim.addToLog(newPartitionTable.toString());
+    sim.addToLog(myOS.partitionTable.toString());
+    myOS.startKernelProcess("scheduler");
+  }
+
+private void sort(ArrayList<Partition> partitionTable) {
+    int i, j;
+    Partition temp;
+    boolean swapped;
+    int n = partitionTable.size();
+    for (i = 0; i < n - 1; i++) {
+      swapped = false;
+      for (j = 0; j < n - i - 1; j++) {
+        if (isSwappable(partitionTable, j)) {
+            // Swap
+            temp = partitionTable.get(j);
+            partitionTable(j) = partitionTable(j + 1);
+            partitionTable(j + 1) = temp;
+            swapped = true;
         }
-        myOS.partitionTable.add(new Partition(currentBA, freeSize));
-        // Log the final partition tables once
-        sim.addToLog(myOS.partitionTable.toString());
-        myOS.startKernelProcess("scheduler");
+      }
+      // If no two elements were
+      // swapped by inner loop, then break
+      if (swapped == false)
+          break;
     }
-    
-    private UserProcess findProcess(int ba) {
-        UserProcess result = null;
-        for (int i = 0; i < myOS.readyQueue.size(); i++) {
-            if (myOS.readyQueue.get(i).baseAddress == ba) {
-                result = myOS.readyQueue.get(i);
-                break;
-            }
+  }
+
+  private void mergePartitions(partitionTable) {
+    int i = 0;
+    int n = partitionTable.size();
+    boolean isMerged = false;
+    // Iterate until you find the first free partition
+    while (i < n && !isMerged) {
+      // If the partition is free, merge this with the rest of the partitions
+      Partition firstPartition = partitionTable.get(i);
+      if (firstPartition.isFree()) {
+        // Get the sum of all the sizes
+        int sum = firstPartition.size;
+        for (int j = i + 1; j < n; j++) {
+          currentPartition = partitionTable.get(j);
+          sum += currentPartition.size();
+          // Remove the partition from the partition table
+          partitionTable.remove(j);
         }
-        return result;
+        // Make the first partition the sum of all the partitions
+        firstPartition.size = sum;
+      }
     }
+  }
+
+  private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
+    return (partitionTable.get(index) != partitionTable.get(index).isFree) && (partitionTable.get(index + 1) != partitionTable.get(index + 1).isFree);
+  }
+  
+  private UserProcess findProcess(int ba) {
+    UserProcess result = null;
+    for (int i = 0; i < myOS.readyQueue.size(); i++) {
+      if (myOS.readyQueue.get(i).baseAddress == ba) {
+        result = myOS.readyQueue.get(i);
+        break;
+      }
+    }
+    return result;
+  }
 }
