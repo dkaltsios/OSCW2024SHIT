@@ -360,4 +360,791 @@
   >Process Admitter: Admitted process 15 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 125 ==============
 >myPC: At time 125 fetched a S
-==============
+============== SIMULATION STEP 126 ==============
+>myPC: At time 126 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 127 ==============
+>myPC: At time 127 fetched a *
+============== SIMULATION STEP 128 ==============
+>myPC: At time 128 executed a *
+============== SIMULATION STEP 129 ==============
+>myPC: At time 129 fetched a *
+============== SIMULATION STEP 130 ==============
+>myPC: At time 130 executed a *
+============== SIMULATION STEP 131 ==============
+>myPC: At time 131 fetched a *
+============== SIMULATION STEP 132 ==============
+>User: Pressed button 2
+>myPC: At time 132 executed a *
+============== SIMULATION STEP 133 ==============
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 133 fetched a *
+============== SIMULATION STEP 134 ==============
+>myPC: At time 134 executed a *
+============== SIMULATION STEP 135 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 135 fetched a *
+============== SIMULATION STEP 136 ==============
+>myPC: At time 136 executed a *
+============== SIMULATION STEP 137 ==============
+>myPC: At time 137 fetched a M
+============== SIMULATION STEP 138 ==============
+>myPC: At time 138 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager : Partition with BA : 176 was found.Starting Process Creator
+============== SIMULATION STEP 139 ==============
+>myPC: At time 139 fetched a C
+============== SIMULATION STEP 140 ==============
+>myPC: At time 140 executed a C
+ >myOS: Finished creating process
+  >Process Creator: process with PID 16 created at partition -1 (BA 176). Starting process admitter
+============== SIMULATION STEP 141 ==============
+>myPC: At time 141 fetched a A
+============== SIMULATION STEP 142 ==============
+>User: Pressed button 2
+>myPC: At time 142 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 16 to the readyQueue. Starting Scheduler
+============== SIMULATION STEP 143 ==============
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 143 fetched a S
+============== SIMULATION STEP 144 ==============
+>myPC: At time 144 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 145 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 145 fetched a *
+============== SIMULATION STEP 146 ==============
+>myPC: At time 146 executed a *
+============== SIMULATION STEP 147 ==============
+>myPC: At time 147 fetched a M
+============== SIMULATION STEP 148 ==============
+>myPC: At time 148 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager : Partition with BA : 200 was found.Starting Process Creator
+============== SIMULATION STEP 149 ==============
+>myPC: At time 149 fetched a C
+============== SIMULATION STEP 150 ==============
+>myPC: At time 150 executed a C
+ >myOS: Finished creating process
+  >Process Creator: process with PID 17 created at partition -1 (BA 200). Starting process admitter
+============== SIMULATION STEP 151 ==============
+>myPC: At time 151 fetched a A
+============== SIMULATION STEP 152 ==============
+>myPC: At time 152 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 17 to the readyQueue. Starting Scheduler
+============== SIMULATION STEP 153 ==============
+>myPC: At time 153 fetched a S
+============== SIMULATION STEP 154 ==============
+>myPC: At time 154 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 155 ==============
+>myPC: At time 155 fetched a *
+============== SIMULATION STEP 156 ==============
+>myPC: At time 156 executed a *
+============== SIMULATION STEP 157 ==============
+>myPC: At time 157 fetched a *
+============== SIMULATION STEP 158 ==============
+>myPC: At time 158 executed a *
+============== SIMULATION STEP 159 ==============
+>myPC: At time 159 fetched a *
+============== SIMULATION STEP 160 ==============
+>myPC: At time 160 executed a *
+============== SIMULATION STEP 161 ==============
+>myPC: At time 161 fetched a *
+============== SIMULATION STEP 162 ==============
+>myPC: At time 162 executed a *
+============== SIMULATION STEP 163 ==============
+>User: Pressed button 3
+>myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
+>myPC: At time 163 fetched a *
+============== SIMULATION STEP 164 ==============
+>myPC: At time 164 executed a *
+============== SIMULATION STEP 165 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 165 fetched a *
+============== SIMULATION STEP 166 ==============
+>myPC: At time 166 executed a *
+============== SIMULATION STEP 167 ==============
+>myPC: At time 167 fetched a M
+============== SIMULATION STEP 168 ==============
+>myPC: At time 168 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager: No partition was found. Starting Compact Kernel
+============== SIMULATION STEP 169 ==============
+>myPC: At time 169 fetched a S
+============== SIMULATION STEP 170 ==============
+>myPC: At time 170 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 171 ==============
+>myPC: At time 171 fetched a *
+============== SIMULATION STEP 172 ==============
+>myPC: At time 172 executed a *
+============== SIMULATION STEP 173 ==============
+>myPC: At time 173 fetched a *
+============== SIMULATION STEP 174 ==============
+>myPC: At time 174 executed a *
+============== SIMULATION STEP 175 ==============
+>myPC: At time 175 fetched a *
+============== SIMULATION STEP 176 ==============
+>myPC: At time 176 executed a *
+============== SIMULATION STEP 177 ==============
+>myPC: At time 177 fetched a *
+============== SIMULATION STEP 178 ==============
+>myPC: At time 178 executed a *
+============== SIMULATION STEP 179 ==============
+>myPC: At time 179 fetched a *
+============== SIMULATION STEP 180 ==============
+>myPC: At time 180 executed a *
+============== SIMULATION STEP 181 ==============
+>myPC: At time 181 fetched a *
+============== SIMULATION STEP 182 ==============
+>myPC: At time 182 executed a *
+============== SIMULATION STEP 183 ==============
+>myPC: At time 183 fetched a $
+============== SIMULATION STEP 184 ==============
+>myPC: At time 184 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 185 ==============
+>myPC: At time 185 fetched a X
+============== SIMULATION STEP 186 ==============
+>myPC: At time 186 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 10. Starting coalesce
+============== SIMULATION STEP 187 ==============
+>myPC: At time 187 fetched a N
+============== SIMULATION STEP 188 ==============
+>myPC: At time 188 executed a N
+ >myOS: Coalesce partition 50
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 50. Starting Process Scheduler
+============== SIMULATION STEP 189 ==============
+>myPC: At time 189 fetched a S
+============== SIMULATION STEP 190 ==============
+>myPC: At time 190 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 11
+============== SIMULATION STEP 191 ==============
+>myPC: At time 191 fetched a *
+============== SIMULATION STEP 192 ==============
+>myPC: At time 192 executed a *
+============== SIMULATION STEP 193 ==============
+>myPC: At time 193 fetched a *
+============== SIMULATION STEP 194 ==============
+>myPC: At time 194 executed a *
+============== SIMULATION STEP 195 ==============
+>myPC: At time 195 fetched a *
+============== SIMULATION STEP 196 ==============
+>myPC: At time 196 executed a *
+============== SIMULATION STEP 197 ==============
+>myPC: At time 197 fetched a *
+============== SIMULATION STEP 198 ==============
+>myPC: At time 198 executed a *
+============== SIMULATION STEP 199 ==============
+>myPC: At time 199 fetched a $
+============== SIMULATION STEP 200 ==============
+>myPC: At time 200 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 201 ==============
+>myPC: At time 201 fetched a X
+============== SIMULATION STEP 202 ==============
+>myPC: At time 202 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 11. Starting coalesce
+============== SIMULATION STEP 203 ==============
+>myPC: At time 203 fetched a N
+============== SIMULATION STEP 204 ==============
+>myPC: At time 204 executed a N
+ >myOS: Coalesce partition 84
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 84. Starting Process Scheduler
+============== SIMULATION STEP 205 ==============
+>myPC: At time 205 fetched a S
+============== SIMULATION STEP 206 ==============
+>myPC: At time 206 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 12
+============== SIMULATION STEP 207 ==============
+>myPC: At time 207 fetched a *
+============== SIMULATION STEP 208 ==============
+>myPC: At time 208 executed a *
+============== SIMULATION STEP 209 ==============
+>myPC: At time 209 fetched a *
+============== SIMULATION STEP 210 ==============
+>myPC: At time 210 executed a *
+============== SIMULATION STEP 211 ==============
+>myPC: At time 211 fetched a *
+============== SIMULATION STEP 212 ==============
+>myPC: At time 212 executed a *
+============== SIMULATION STEP 213 ==============
+>myPC: At time 213 fetched a *
+============== SIMULATION STEP 214 ==============
+>myPC: At time 214 executed a *
+============== SIMULATION STEP 215 ==============
+>myPC: At time 215 fetched a *
+============== SIMULATION STEP 216 ==============
+>myPC: At time 216 executed a *
+============== SIMULATION STEP 217 ==============
+>myPC: At time 217 fetched a *
+============== SIMULATION STEP 218 ==============
+>myPC: At time 218 executed a *
+============== SIMULATION STEP 219 ==============
+>myPC: At time 219 fetched a *
+============== SIMULATION STEP 220 ==============
+>myPC: At time 220 executed a *
+============== SIMULATION STEP 221 ==============
+>myPC: At time 221 fetched a *
+============== SIMULATION STEP 222 ==============
+>myPC: At time 222 executed a *
+============== SIMULATION STEP 223 ==============
+>myPC: At time 223 fetched a *
+============== SIMULATION STEP 224 ==============
+>myPC: At time 224 executed a *
+============== SIMULATION STEP 225 ==============
+>myPC: At time 225 fetched a $
+============== SIMULATION STEP 226 ==============
+>myPC: At time 226 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 227 ==============
+>myPC: At time 227 fetched a X
+============== SIMULATION STEP 228 ==============
+>myPC: At time 228 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 12. Starting coalesce
+============== SIMULATION STEP 229 ==============
+>myPC: At time 229 fetched a N
+============== SIMULATION STEP 230 ==============
+>myPC: At time 230 executed a N
+ >myOS: Coalesce partition 101
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 101. Starting Process Scheduler
+============== SIMULATION STEP 231 ==============
+>myPC: At time 231 fetched a S
+============== SIMULATION STEP 232 ==============
+>myPC: At time 232 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 13
+============== SIMULATION STEP 233 ==============
+>myPC: At time 233 fetched a *
+============== SIMULATION STEP 234 ==============
+>myPC: At time 234 executed a *
+============== SIMULATION STEP 235 ==============
+>myPC: At time 235 fetched a *
+============== SIMULATION STEP 236 ==============
+>myPC: At time 236 executed a *
+============== SIMULATION STEP 237 ==============
+>myPC: At time 237 fetched a *
+============== SIMULATION STEP 238 ==============
+>myPC: At time 238 executed a *
+============== SIMULATION STEP 239 ==============
+>myPC: At time 239 fetched a *
+============== SIMULATION STEP 240 ==============
+>myPC: At time 240 executed a *
+============== SIMULATION STEP 241 ==============
+>myPC: At time 241 fetched a *
+============== SIMULATION STEP 242 ==============
+>myPC: At time 242 executed a *
+============== SIMULATION STEP 243 ==============
+>myPC: At time 243 fetched a *
+============== SIMULATION STEP 244 ==============
+>myPC: At time 244 executed a *
+============== SIMULATION STEP 245 ==============
+>myPC: At time 245 fetched a *
+============== SIMULATION STEP 246 ==============
+>myPC: At time 246 executed a *
+============== SIMULATION STEP 247 ==============
+>myPC: At time 247 fetched a *
+============== SIMULATION STEP 248 ==============
+>myPC: At time 248 executed a *
+============== SIMULATION STEP 249 ==============
+>myPC: At time 249 fetched a *
+============== SIMULATION STEP 250 ==============
+>myPC: At time 250 executed a *
+============== SIMULATION STEP 251 ==============
+>myPC: At time 251 fetched a *
+============== SIMULATION STEP 252 ==============
+>myPC: At time 252 executed a *
+============== SIMULATION STEP 253 ==============
+>myPC: At time 253 fetched a *
+============== SIMULATION STEP 254 ==============
+>myPC: At time 254 executed a *
+============== SIMULATION STEP 255 ==============
+>myPC: At time 255 fetched a *
+============== SIMULATION STEP 256 ==============
+>myPC: At time 256 executed a *
+============== SIMULATION STEP 257 ==============
+>myPC: At time 257 fetched a *
+============== SIMULATION STEP 258 ==============
+>myPC: At time 258 executed a *
+============== SIMULATION STEP 259 ==============
+>myPC: At time 259 fetched a *
+============== SIMULATION STEP 260 ==============
+>myPC: At time 260 executed a *
+============== SIMULATION STEP 261 ==============
+>myPC: At time 261 fetched a *
+============== SIMULATION STEP 262 ==============
+>myPC: At time 262 executed a *
+============== SIMULATION STEP 263 ==============
+>myPC: At time 263 fetched a *
+============== SIMULATION STEP 264 ==============
+>myPC: At time 264 executed a *
+============== SIMULATION STEP 265 ==============
+>myPC: At time 265 fetched a $
+============== SIMULATION STEP 266 ==============
+>myPC: At time 266 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 267 ==============
+>myPC: At time 267 fetched a X
+============== SIMULATION STEP 268 ==============
+>myPC: At time 268 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 13. Starting coalesce
+============== SIMULATION STEP 269 ==============
+>myPC: At time 269 fetched a N
+============== SIMULATION STEP 270 ==============
+>myPC: At time 270 executed a N
+ >myOS: Coalesce partition 125
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 125. Starting Process Scheduler
+============== SIMULATION STEP 271 ==============
+>myPC: At time 271 fetched a S
+============== SIMULATION STEP 272 ==============
+>myPC: At time 272 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 14
+============== SIMULATION STEP 273 ==============
+>myPC: At time 273 fetched a *
+============== SIMULATION STEP 274 ==============
+>myPC: At time 274 executed a *
+============== SIMULATION STEP 275 ==============
+>myPC: At time 275 fetched a *
+============== SIMULATION STEP 276 ==============
+>myPC: At time 276 executed a *
+============== SIMULATION STEP 277 ==============
+>myPC: At time 277 fetched a *
+============== SIMULATION STEP 278 ==============
+>myPC: At time 278 executed a *
+============== SIMULATION STEP 279 ==============
+>myPC: At time 279 fetched a *
+============== SIMULATION STEP 280 ==============
+>myPC: At time 280 executed a *
+============== SIMULATION STEP 281 ==============
+>myPC: At time 281 fetched a $
+============== SIMULATION STEP 282 ==============
+>myPC: At time 282 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 283 ==============
+>myPC: At time 283 fetched a X
+============== SIMULATION STEP 284 ==============
+>myPC: At time 284 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 14. Starting coalesce
+============== SIMULATION STEP 285 ==============
+>myPC: At time 285 fetched a N
+============== SIMULATION STEP 286 ==============
+>myPC: At time 286 executed a N
+ >myOS: Coalesce partition 159
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 159. Starting Process Scheduler
+============== SIMULATION STEP 287 ==============
+>myPC: At time 287 fetched a S
+============== SIMULATION STEP 288 ==============
+>myPC: At time 288 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 15
+============== SIMULATION STEP 289 ==============
+>myPC: At time 289 fetched a *
+============== SIMULATION STEP 290 ==============
+>myPC: At time 290 executed a *
+============== SIMULATION STEP 291 ==============
+>myPC: At time 291 fetched a *
+============== SIMULATION STEP 292 ==============
+>myPC: At time 292 executed a *
+============== SIMULATION STEP 293 ==============
+>myPC: At time 293 fetched a *
+============== SIMULATION STEP 294 ==============
+>myPC: At time 294 executed a *
+============== SIMULATION STEP 295 ==============
+>myPC: At time 295 fetched a *
+============== SIMULATION STEP 296 ==============
+>myPC: At time 296 executed a *
+============== SIMULATION STEP 297 ==============
+>myPC: At time 297 fetched a *
+============== SIMULATION STEP 298 ==============
+>myPC: At time 298 executed a *
+============== SIMULATION STEP 299 ==============
+>myPC: At time 299 fetched a *
+============== SIMULATION STEP 300 ==============
+>myPC: At time 300 executed a *
+============== SIMULATION STEP 301 ==============
+>myPC: At time 301 fetched a *
+============== SIMULATION STEP 302 ==============
+>myPC: At time 302 executed a *
+============== SIMULATION STEP 303 ==============
+>myPC: At time 303 fetched a *
+============== SIMULATION STEP 304 ==============
+>myPC: At time 304 executed a *
+============== SIMULATION STEP 305 ==============
+>myPC: At time 305 fetched a *
+============== SIMULATION STEP 306 ==============
+>myPC: At time 306 executed a *
+============== SIMULATION STEP 307 ==============
+>myPC: At time 307 fetched a *
+============== SIMULATION STEP 308 ==============
+>myPC: At time 308 executed a *
+============== SIMULATION STEP 309 ==============
+>myPC: At time 309 fetched a *
+============== SIMULATION STEP 310 ==============
+>myPC: At time 310 executed a *
+============== SIMULATION STEP 311 ==============
+>myPC: At time 311 fetched a *
+============== SIMULATION STEP 312 ==============
+>myPC: At time 312 executed a *
+============== SIMULATION STEP 313 ==============
+>myPC: At time 313 fetched a *
+============== SIMULATION STEP 314 ==============
+>myPC: At time 314 executed a *
+============== SIMULATION STEP 315 ==============
+>myPC: At time 315 fetched a *
+============== SIMULATION STEP 316 ==============
+>myPC: At time 316 executed a *
+============== SIMULATION STEP 317 ==============
+>myPC: At time 317 fetched a *
+============== SIMULATION STEP 318 ==============
+>myPC: At time 318 executed a *
+============== SIMULATION STEP 319 ==============
+>myPC: At time 319 fetched a *
+============== SIMULATION STEP 320 ==============
+>myPC: At time 320 executed a *
+============== SIMULATION STEP 321 ==============
+>myPC: At time 321 fetched a $
+============== SIMULATION STEP 322 ==============
+>myPC: At time 322 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 323 ==============
+>myPC: At time 323 fetched a X
+============== SIMULATION STEP 324 ==============
+>myPC: At time 324 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 15. Starting coalesce
+============== SIMULATION STEP 325 ==============
+>myPC: At time 325 fetched a N
+============== SIMULATION STEP 326 ==============
+>myPC: At time 326 executed a N
+ >myOS: Coalesce partition 9
+  >Coalesce: Merged next partition with current.
+  >Coalesce: Finished coalescing partition 9. Starting Process Scheduler
+============== SIMULATION STEP 327 ==============
+>myPC: At time 327 fetched a S
+============== SIMULATION STEP 328 ==============
+>myPC: At time 328 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 16
+============== SIMULATION STEP 329 ==============
+>myPC: At time 329 fetched a *
+============== SIMULATION STEP 330 ==============
+>myPC: At time 330 executed a *
+============== SIMULATION STEP 331 ==============
+>myPC: At time 331 fetched a *
+============== SIMULATION STEP 332 ==============
+>myPC: At time 332 executed a *
+============== SIMULATION STEP 333 ==============
+>myPC: At time 333 fetched a *
+============== SIMULATION STEP 334 ==============
+>myPC: At time 334 executed a *
+============== SIMULATION STEP 335 ==============
+>myPC: At time 335 fetched a *
+============== SIMULATION STEP 336 ==============
+>myPC: At time 336 executed a *
+============== SIMULATION STEP 337 ==============
+>myPC: At time 337 fetched a *
+============== SIMULATION STEP 338 ==============
+>myPC: At time 338 executed a *
+============== SIMULATION STEP 339 ==============
+>myPC: At time 339 fetched a *
+============== SIMULATION STEP 340 ==============
+>myPC: At time 340 executed a *
+============== SIMULATION STEP 341 ==============
+>myPC: At time 341 fetched a *
+============== SIMULATION STEP 342 ==============
+>myPC: At time 342 executed a *
+============== SIMULATION STEP 343 ==============
+>myPC: At time 343 fetched a *
+============== SIMULATION STEP 344 ==============
+>myPC: At time 344 executed a *
+============== SIMULATION STEP 345 ==============
+>myPC: At time 345 fetched a *
+============== SIMULATION STEP 346 ==============
+>myPC: At time 346 executed a *
+============== SIMULATION STEP 347 ==============
+>myPC: At time 347 fetched a $
+============== SIMULATION STEP 348 ==============
+>myPC: At time 348 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 349 ==============
+>myPC: At time 349 fetched a X
+============== SIMULATION STEP 350 ==============
+>myPC: At time 350 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 16. Starting coalesce
+============== SIMULATION STEP 351 ==============
+>myPC: At time 351 fetched a N
+============== SIMULATION STEP 352 ==============
+>myPC: At time 352 executed a N
+ >myOS: Coalesce partition 176
+  >Coalesce: Merged previous partition with current.
+  >Coalesce: Finished coalescing partition 176. Starting Process Scheduler
+============== SIMULATION STEP 353 ==============
+>myPC: At time 353 fetched a S
+============== SIMULATION STEP 354 ==============
+>myPC: At time 354 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 17
+============== SIMULATION STEP 355 ==============
+>myPC: At time 355 fetched a *
+============== SIMULATION STEP 356 ==============
+>myPC: At time 356 executed a *
+============== SIMULATION STEP 357 ==============
+>myPC: At time 357 fetched a *
+============== SIMULATION STEP 358 ==============
+>myPC: At time 358 executed a *
+============== SIMULATION STEP 359 ==============
+>myPC: At time 359 fetched a *
+============== SIMULATION STEP 360 ==============
+>myPC: At time 360 executed a *
+============== SIMULATION STEP 361 ==============
+>myPC: At time 361 fetched a *
+============== SIMULATION STEP 362 ==============
+>myPC: At time 362 executed a *
+============== SIMULATION STEP 363 ==============
+>myPC: At time 363 fetched a *
+============== SIMULATION STEP 364 ==============
+>myPC: At time 364 executed a *
+============== SIMULATION STEP 365 ==============
+>myPC: At time 365 fetched a *
+============== SIMULATION STEP 366 ==============
+>myPC: At time 366 executed a *
+============== SIMULATION STEP 367 ==============
+>myPC: At time 367 fetched a *
+============== SIMULATION STEP 368 ==============
+>myPC: At time 368 executed a *
+============== SIMULATION STEP 369 ==============
+>myPC: At time 369 fetched a *
+============== SIMULATION STEP 370 ==============
+>myPC: At time 370 executed a *
+============== SIMULATION STEP 371 ==============
+>myPC: At time 371 fetched a *
+============== SIMULATION STEP 372 ==============
+>myPC: At time 372 executed a *
+============== SIMULATION STEP 373 ==============
+>myPC: At time 373 fetched a $
+============== SIMULATION STEP 374 ==============
+>myPC: At time 374 executed a $
+ >myOS: Exiting the running process
+============== SIMULATION STEP 375 ==============
+>myPC: At time 375 fetched a X
+============== SIMULATION STEP 376 ==============
+>myPC: At time 376 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 17. Starting coalesce
+============== SIMULATION STEP 377 ==============
+>myPC: At time 377 fetched a N
+============== SIMULATION STEP 378 ==============
+>myPC: At time 378 executed a N
+ >myOS: Coalesce partition 200
+  >Coalesce: Merged previous, current, and next partitions.
+  >Coalesce: Finished coalescing partition 200. Starting Process Scheduler
+============== SIMULATION STEP 379 ==============
+>myPC: At time 379 fetched a S
+============== SIMULATION STEP 380 ==============
+>myPC: At time 380 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: ready queue is empty. Switching to IDLE
+============== SIMULATION STEP 381 ==============
+>myPC: At time 381 fetched a I
+============== SIMULATION STEP 382 ==============
+>myPC: At time 382 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 383 ==============
+>myPC: At time 383 fetched a I
+============== SIMULATION STEP 384 ==============
+>myPC: At time 384 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 385 ==============
+>myPC: At time 385 fetched a I
+============== SIMULATION STEP 386 ==============
+>myPC: At time 386 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 387 ==============
+>myPC: At time 387 fetched a I
+============== SIMULATION STEP 388 ==============
+>myPC: At time 388 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 389 ==============
+>myPC: At time 389 fetched a I
+============== SIMULATION STEP 390 ==============
+>myPC: At time 390 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 391 ==============
+>myPC: At time 391 fetched a I
+============== SIMULATION STEP 392 ==============
+>myPC: At time 392 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 393 ==============
+>myPC: At time 393 fetched a I
+============== SIMULATION STEP 394 ==============
+>myPC: At time 394 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 395 ==============
+>myPC: At time 395 fetched a I
+============== SIMULATION STEP 396 ==============
+>myPC: At time 396 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 397 ==============
+>myPC: At time 397 fetched a I
+============== SIMULATION STEP 398 ==============
+>myPC: At time 398 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 399 ==============
+>myPC: At time 399 fetched a I
+============== SIMULATION STEP 400 ==============
+>myPC: At time 400 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 401 ==============
+>myPC: At time 401 fetched a I
+============== SIMULATION STEP 402 ==============
+>myPC: At time 402 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 403 ==============
+>myPC: At time 403 fetched a I
+============== SIMULATION STEP 404 ==============
+>myPC: At time 404 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 405 ==============
+>myPC: At time 405 fetched a I
+============== SIMULATION STEP 406 ==============
+>myPC: At time 406 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 407 ==============
+>myPC: At time 407 fetched a I
+============== SIMULATION STEP 408 ==============
+>myPC: At time 408 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 409 ==============
+>myPC: At time 409 fetched a I
+============== SIMULATION STEP 410 ==============
+>myPC: At time 410 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 411 ==============
+>myPC: At time 411 fetched a I
+============== SIMULATION STEP 412 ==============
+>myPC: At time 412 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 413 ==============
+>myPC: At time 413 fetched a I
+============== SIMULATION STEP 414 ==============
+>myPC: At time 414 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 415 ==============
+>myPC: At time 415 fetched a I
+============== SIMULATION STEP 416 ==============
+>myPC: At time 416 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 417 ==============
+>myPC: At time 417 fetched a I
+============== SIMULATION STEP 418 ==============
+>myPC: At time 418 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 419 ==============
+>myPC: At time 419 fetched a I
+============== SIMULATION STEP 420 ==============
+>myPC: At time 420 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 421 ==============
+>myPC: At time 421 fetched a I
+============== SIMULATION STEP 422 ==============
+>myPC: At time 422 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 423 ==============
+>myPC: At time 423 fetched a I
+============== SIMULATION STEP 424 ==============
+>myPC: At time 424 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 425 ==============
+>myPC: At time 425 fetched a I
+============== SIMULATION STEP 426 ==============
+>myPC: At time 426 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 427 ==============
+>myPC: At time 427 fetched a I
+============== SIMULATION STEP 428 ==============
+>myPC: At time 428 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 429 ==============
+>myPC: At time 429 fetched a I
+============== SIMULATION STEP 430 ==============
+>myPC: At time 430 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 431 ==============
+>myPC: At time 431 fetched a I
+============== SIMULATION STEP 432 ==============
+>myPC: At time 432 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 433 ==============
+>myPC: At time 433 fetched a I
+============== SIMULATION STEP 434 ==============
+>myPC: At time 434 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 435 ==============
+>myPC: At time 435 fetched a I
+============== SIMULATION STEP 436 ==============
+>myPC: At time 436 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 437 ==============
+>myPC: At time 437 fetched a I
+============== SIMULATION STEP 438 ==============
+>myPC: At time 438 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 439 ==============
+>myPC: At time 439 fetched a I
+============== SIMULATION STEP 440 ==============
+>myPC: At time 440 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 441 ==============
+>myPC: At time 441 fetched a I
+============== SIMULATION STEP 442 ==============
+>myPC: At time 442 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 443 ==============
+>myPC: At time 443 fetched a I
+============== SIMULATION STEP 444 ==============
+>myPC: At time 444 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 445 ==============
+>myPC: At time 445 fetched a I
+============== SIMULATION STEP 446 ==============
+>myPC: At time 446 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 447 ==============
+>myPC: At time 447 fetched a I
+============== SIMULATION STEP 448 ==============
+>myPC: At time 448 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 449 ==============
+>myPC: At time 449 fetched a I
+============== SIMULATION STEP 450 ==============
+>myPC: At time 450 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 4

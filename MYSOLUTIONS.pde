@@ -132,8 +132,8 @@ public class FirstFitMM extends MemoryManagerAlgorithm{
       sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
       sim.requestFails++;
       // Moved to compact kernel
-      // myOS.raiseIRQ("scheduler");
-      myOS.raiseIRQ("compact");
+      myOS.raiseIRQ("scheduler");
+      // myOS.raiseIRQ("compact");
     }
     return result;
   }
@@ -168,8 +168,8 @@ public class WorstFitMM extends MemoryManagerAlgorithm{
       sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
       sim.requestFails++;
       // Moved to compact kernel
-      // myOS.raiseIRQ("scheduler");
-      myOS.raiseIRQ("compact");
+      myOS.raiseIRQ("scheduler");
+      // myOS.raiseIRQ("compact");
     }
     return result;
   }
@@ -304,29 +304,33 @@ public class CompactKernel extends KernelProcess{
   public void finish() {
     int currentBA = myOS.partitionTable.get(0).baseAddress;
     ArrayList<Partition> newPartitionTable = new ArrayList<Partition>();
-    for (int i = 0; i < myOS.partitionTable.size(); i++) {
-      if (!myOS.partitionTable.get(i).isFree) {
-        Partition p = myOS.partitionTable.get(i);
+
+    // Handle non-free partitions
+    for (Partition p : myOS.partitionTable) {
+      if (!p.isFree) {
         p.baseAddress = currentBA;
-        findProcess(p.baseAddress).baseAddress = currentBA;
+        Process process = findProcess(p.baseAddress).baseAddress;
+        // Add the base address to the process
+        if (process != null) {
+          process.baseAddress = currentBA;
+        }
         newPartitionTable.add(p);
         currentBA = p.baseAddress + p.size;
       } 
     }
-    for (int i = 0; i < myOS.partitionTable.size(); i++) {
-      if (myOS.partitionTable.get(i).isFree) {
-        Partition p = myOS.partitionTable.get(i);
+
+    // Handle free partitions
+    for (Partition p : myOS.partitionTable) {
+      if (p.isFree) {
         p.baseAddress = currentBA;
         newPartitionTable.add(p);
         currentBA = p.baseAddress + p.size;
       }
-      sim.addToLog(newPartitionTable.toString());
-      sim.addToLog(myOS.partitionTable.toString());
     }
-    myOS.partitionTable = newPartitionTable;
-    sim.addToLog("  >Compact: Partitions compacted. Starting Process Scheduler");
+    // Log the final partition tables once
+    sim.addToLog(newPartitionTable.toString());
+    sim.addToLog(myOS.partitionTable.toString());
     myOS.startKernelProcess("scheduler");
-    this.state = STATE.READY;
   }
   
   private UserProcess findProcess(int ba) {
