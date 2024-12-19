@@ -768,34 +768,67 @@ public class CompactKernel extends KernelProcess{
   
   public void finish() {
     int currentBA = myOS.partitionTable.get(0).baseAddress;
-    ArrayList<Partition> newPartitionTable = new ArrayList<Partition>();
+    ArrayList<Partition> partitionTable = myOs.partitionTable;
 
-    // Handle non-free partitions
-    for (Partition p : myOS.partitionTable) {
-      if (!p.isFree) {
-        p.baseAddress = currentBA;
-        Process process = findProcess(p.baseAddress).baseAddress;
-        // Add the base address to the process
-        if (process != null) {
-          process.baseAddress = currentBA;
-        }
-        newPartitionTable.add(p);
-        currentBA = p.baseAddress + p.size;
-      } 
-    }
+    // Compact partitions
+    sort(partitionTable);
+    mergePartitions(partitionTable);
 
-    // Handle free partitions
-    for (Partition p : myOS.partitionTable) {
-      if (p.isFree) {
-        p.baseAddress = currentBA;
-        newPartitionTable.add(p);
-        currentBA = p.baseAddress + p.size;
-      }
-    }
+
     // Log the final partition tables once
     sim.addToLog(newPartitionTable.toString());
     sim.addToLog(myOS.partitionTable.toString());
     myOS.startKernelProcess("scheduler");
+  }
+
+private void sort(ArrayList<Partition> partitionTable) {
+    int i, j;
+    Partition temp;
+    boolean swapped;
+    int n = partitionTable.size();
+    for (i = 0; i < n - 1; i++) {
+      swapped = false;
+      for (j = 0; j < n - i - 1; j++) {
+        if (isSwappable(partitionTable, j)) {
+            // Swap
+            temp = partitionTable.get(j);
+            partitionTable(j) = partitionTable(j + 1);
+            partitionTable(j + 1) = temp;
+            swapped = true;
+        }
+      }
+      // If no two elements were
+      // swapped by inner loop, then break
+      if (swapped == false)
+          break;
+    }
+  }
+
+  private void mergePartitions(partitionTable) {
+    int i = 0;
+    int n = partitionTable.size();
+    boolean isMerged = false;
+    // Iterate until you find the first free partition
+    while (i < n && !isMerged) {
+      // If the partition is free, merge this with the rest of the partitions
+      Partition firstPartition = partitionTable.get(i);
+      if (firstPartition.isFree()) {
+        // Get the sum of all the sizes
+        int sum = firstPartition.size;
+        for (int j = i + 1; j < n; j++) {
+          currentPartition = partitionTable.get(j);
+          sum += currentPartition.size();
+          // Remove the partition from the partition table
+          partitionTable.remove(j);
+        }
+        // Make the first partition the sum of all the partitions
+        firstPartition.size = sum;
+      }
+    }
+  }
+
+  private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
+    return (partitionTable.get(index) != partitionTable.get(index).isFree) && (partitionTable.get(index + 1) != partitionTable.get(index + 1).isFree);
   }
   
   private UserProcess findProcess(int ba) {
