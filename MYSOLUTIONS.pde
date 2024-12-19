@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 // * Schedulers
 // Shortest Job First Scheduler
 // Pick the process with the shortest burst time
@@ -132,8 +134,8 @@ public class FirstFitMM extends MemoryManagerAlgorithm{
       sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
       sim.requestFails++;
       // Moved to compact kernel
-      myOS.raiseIRQ("scheduler");
-      // myOS.raiseIRQ("compact");
+      // myOS.raiseIRQ("scheduler");
+      myOS.raiseIRQ("compact");
     }
     return result;
   }
@@ -168,8 +170,8 @@ public class WorstFitMM extends MemoryManagerAlgorithm{
       sim.addToLog("  >Memory Manager: No partition was found. Starting Compact Kernel");
       sim.requestFails++;
       // Moved to compact kernel
-      myOS.raiseIRQ("scheduler");
-      // myOS.raiseIRQ("compact");
+      // myOS.raiseIRQ("scheduler");
+      myOS.raiseIRQ("compact");
     }
     return result;
   }
@@ -302,23 +304,32 @@ public class CompactKernel extends KernelProcess{
   }
   
   public void finish() {
-    int currentBA = myOS.partitionTable.get(0).baseAddress;
-    ArrayList<Partition> partitionTable = myOs.partitionTable;
+    ArrayList<Partition> partitionTable = myOS.partitionTable;
 
     // Compact partitions
     sort(partitionTable);
+    sim.addToLog("---------------------------------");
+    sim.addToLog("Sorted: ");
+    for (int i = 0; i < partitionTable.size(); i++) {
+      sim.addToLog("i: " + i + " isFree: " + partitionTable.get(i).isFree);
+    }
+    sim.addToLog("---------------------------------");
+    
+    sim.addToLog("---------------------------------");
+    sim.addToLog("Merged: " + partitionTable);
     mergePartitions(partitionTable);
-
+    for (int i = 0; i < partitionTable.size(); i++) {
+      sim.addToLog("i: " + i + " isFree: " + partitionTable.get(i).isFree + " size: " + partitionTable.get(i).size);
+    }
+    sim.addToLog("---------------------------------");
 
     // Log the final partition tables once
-    sim.addToLog(newPartitionTable.toString());
     sim.addToLog(myOS.partitionTable.toString());
     myOS.startKernelProcess("scheduler");
   }
 
 private void sort(ArrayList<Partition> partitionTable) {
     int i, j;
-    Partition temp;
     boolean swapped;
     int n = partitionTable.size();
     for (i = 0; i < n - 1; i++) {
@@ -326,9 +337,7 @@ private void sort(ArrayList<Partition> partitionTable) {
       for (j = 0; j < n - i - 1; j++) {
         if (isSwappable(partitionTable, j)) {
             // Swap
-            temp = partitionTable.get(j);
-            partitionTable(j) = partitionTable(j + 1);
-            partitionTable(j + 1) = temp;
+            Collections.swap(partitionTable, j, j + 1);
             swapped = true;
         }
       }
@@ -339,7 +348,7 @@ private void sort(ArrayList<Partition> partitionTable) {
     }
   }
 
-  private void mergePartitions(partitionTable) {
+  private void mergePartitions(ArrayList<Partition> partitionTable) {
     int i = 0;
     int n = partitionTable.size();
     boolean isMerged = false;
@@ -347,33 +356,27 @@ private void sort(ArrayList<Partition> partitionTable) {
     while (i < n && !isMerged) {
       // If the partition is free, merge this with the rest of the partitions
       Partition firstPartition = partitionTable.get(i);
-      if (firstPartition.isFree()) {
+      if (firstPartition.isFree) {
         // Get the sum of all the sizes
         int sum = firstPartition.size;
+        Partition currentPartition;
         for (int j = i + 1; j < n; j++) {
           currentPartition = partitionTable.get(j);
-          sum += currentPartition.size();
+          sum += currentPartition.size;
           // Remove the partition from the partition table
           partitionTable.remove(j);
+          n--;
         }
-        // Make the first partition the sum of all the partitions
+        // Make the first partition's size the sum of all the partitions
         firstPartition.size = sum;
+        // Break the loop
+        isMerged = true;
       }
+      i++;
     }
   }
 
   private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
-    return (partitionTable.get(index) != partitionTable.get(index).isFree) && (partitionTable.get(index + 1) != partitionTable.get(index + 1).isFree);
-  }
-  
-  private UserProcess findProcess(int ba) {
-    UserProcess result = null;
-    for (int i = 0; i < myOS.readyQueue.size(); i++) {
-      if (myOS.readyQueue.get(i).baseAddress == ba) {
-        result = myOS.readyQueue.get(i);
-        break;
-      }
-    }
-    return result;
+    return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;
   }
 }
