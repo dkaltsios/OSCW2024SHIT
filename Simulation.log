@@ -486,34 +486,7 @@
 ============== SIMULATION STEP 170 ==============
 >myPC: At time 170 executed a P
  >myOS: Compact partitions
----------------------------------
-Sorted: 
-i: 0 isFree: false
-i: 1 isFree: false
-i: 2 isFree: false
-i: 3 isFree: false
-i: 4 isFree: false
-i: 5 isFree: false
-i: 6 isFree: false
-i: 7 isFree: false
-i: 8 isFree: false
-i: 9 isFree: true
-i: 10 isFree: true
----------------------------------
----------------------------------
-Merged: [OSCW2024$Partition@7d650163, OSCW2024$Partition@50246a2d, OSCW2024$Partition@501f8cde, OSCW2024$Partition@2ea5d2a6, OSCW2024$Partition@7b9eb008, OSCW2024$Partition@898d854, OSCW2024$Partition@24cdcce5, OSCW2024$Partition@247d0a38, OSCW2024$Partition@2a6de04f, OSCW2024$Partition@6479c72e, OSCW2024$Partition@2e1985a0]
-i: 0 isFree: false size: 9
-i: 1 isFree: false size: 34
-i: 2 isFree: false size: 34
-i: 3 isFree: false size: 17
-i: 4 isFree: false size: 24
-i: 5 isFree: false size: 34
-i: 6 isFree: false size: 17
-i: 7 isFree: false size: 24
-i: 8 isFree: false size: 24
-i: 9 isFree: true size: 23
----------------------------------
-[OSCW2024$Partition@7d650163, OSCW2024$Partition@50246a2d, OSCW2024$Partition@501f8cde, OSCW2024$Partition@2ea5d2a6, OSCW2024$Partition@7b9eb008, OSCW2024$Partition@898d854, OSCW2024$Partition@24cdcce5, OSCW2024$Partition@247d0a38, OSCW2024$Partition@2a6de04f, OSCW2024$Partition@6479c72e]
+[OSCW2024$Partition@3367f65a, OSCW2024$Partition@6e2afba2, OSCW2024$Partition@1ad88f57, OSCW2024$Partition@3b1b1a20, OSCW2024$Partition@3742ee3f, OSCW2024$Partition@e8ce49e, OSCW2024$Partition@5070602f, OSCW2024$Partition@3359aa1b, OSCW2024$Partition@13ca8959, OSCW2024$Partition@7a8b27aa]
 ============== SIMULATION STEP 171 ==============
 >myPC: At time 171 fetched a S
 ============== SIMULATION STEP 172 ==============
@@ -1067,257 +1040,886 @@ i: 9 isFree: true size: 23
  >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 407 ==============
 >myPC: At time 407 fetched a I
->User: Pressed button 3
 ============== SIMULATION STEP 408 ==============
 >myPC: At time 408 executed a I
  >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 409 ==============
->myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
 >myPC: At time 409 fetched a I
->User: Pressed button 2
 ============== SIMULATION STEP 410 ==============
 >myPC: At time 410 executed a I
  >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 411 ==============
->myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
->myPC: At time 411 fetched a *
->User: Pressed button 2
+>myPC: At time 411 fetched a I
 ============== SIMULATION STEP 412 ==============
->myPC: At time 412 executed a *
->User: Pressed button 2
+>myPC: At time 412 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 413 ==============
->myPC: At time 413 fetched a M
->User: Pressed button 1
+>myPC: At time 413 fetched a I
 ============== SIMULATION STEP 414 ==============
->myPC: At time 414 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
->User: Pressed button 1
+>myPC: At time 414 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 415 ==============
->myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
->myPC: At time 415 fetched a C
->User: Pressed button 1
+>myPC: At time 415 fetched a I
 ============== SIMULATION STEP 416 ==============
->myPC: At time 416 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 18 created at partition -1 (BA 9). Starting process admitter
+>myPC: At time 416 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 417 ==============
->myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
->myPC: At time 417 fetched a A
+>myPC: At time 417 fetched a I
 ============== SIMULATION STEP 418 ==============
->myPC: At time 418 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 18 to the readyQueue. Starting Scheduler
+>myPC: At time 418 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 419 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 419 fetched a *
+>myPC: At time 419 fetched a I
 ============== SIMULATION STEP 420 ==============
->myPC: At time 420 executed a *
+>myPC: At time 420 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 421 ==============
->myPC: At time 421 fetched a M
+>myPC: At time 421 fetched a I
 ============== SIMULATION STEP 422 ==============
->myPC: At time 422 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 33 was found.Starting Process Creator
+>myPC: At time 422 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 423 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 423 fetched a C
+>myPC: At time 423 fetched a I
 ============== SIMULATION STEP 424 ==============
->myPC: At time 424 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 19 created at partition -1 (BA 33). Starting process admitter
+>myPC: At time 424 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 425 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 425 fetched a A
+>myPC: At time 425 fetched a I
 ============== SIMULATION STEP 426 ==============
->myPC: At time 426 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 19 to the readyQueue. Starting Scheduler
+>myPC: At time 426 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 427 ==============
->myPC: At time 427 fetched a *
+>myPC: At time 427 fetched a I
 ============== SIMULATION STEP 428 ==============
->myPC: At time 428 executed a *
+>myPC: At time 428 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 429 ==============
->myPC: At time 429 fetched a M
+>myPC: At time 429 fetched a I
 ============== SIMULATION STEP 430 ==============
->myPC: At time 430 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 50 was found.Starting Process Creator
+>myPC: At time 430 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 431 ==============
->myPC: At time 431 fetched a C
+>myPC: At time 431 fetched a I
 ============== SIMULATION STEP 432 ==============
->myPC: At time 432 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 20 created at partition -1 (BA 50). Starting process admitter
+>myPC: At time 432 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 433 ==============
->myPC: At time 433 fetched a A
+>myPC: At time 433 fetched a I
 ============== SIMULATION STEP 434 ==============
->myPC: At time 434 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 20 to the readyQueue. Starting Scheduler
+>myPC: At time 434 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 435 ==============
->myPC: At time 435 fetched a S
+>myPC: At time 435 fetched a I
 ============== SIMULATION STEP 436 ==============
->myPC: At time 436 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 18
+>myPC: At time 436 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 437 ==============
->myPC: At time 437 fetched a *
+>myPC: At time 437 fetched a I
 ============== SIMULATION STEP 438 ==============
->myPC: At time 438 executed a *
+>myPC: At time 438 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 439 ==============
->myPC: At time 439 fetched a *
+>myPC: At time 439 fetched a I
 ============== SIMULATION STEP 440 ==============
->myPC: At time 440 executed a *
+>myPC: At time 440 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 441 ==============
->myPC: At time 441 fetched a *
+>myPC: At time 441 fetched a I
 ============== SIMULATION STEP 442 ==============
->myPC: At time 442 executed a *
+>myPC: At time 442 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 443 ==============
->myPC: At time 443 fetched a *
+>myPC: At time 443 fetched a I
 ============== SIMULATION STEP 444 ==============
->myPC: At time 444 executed a *
+>myPC: At time 444 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 445 ==============
->myPC: At time 445 fetched a *
+>myPC: At time 445 fetched a I
 ============== SIMULATION STEP 446 ==============
->myPC: At time 446 executed a *
+>myPC: At time 446 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 447 ==============
->myPC: At time 447 fetched a *
+>myPC: At time 447 fetched a I
 ============== SIMULATION STEP 448 ==============
->myPC: At time 448 executed a *
+>myPC: At time 448 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 449 ==============
->myPC: At time 449 fetched a *
+>myPC: At time 449 fetched a I
 ============== SIMULATION STEP 450 ==============
->myPC: At time 450 executed a *
+>myPC: At time 450 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 451 ==============
->myPC: At time 451 fetched a *
+>myPC: At time 451 fetched a I
 ============== SIMULATION STEP 452 ==============
->myPC: At time 452 executed a *
+>myPC: At time 452 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 453 ==============
->myPC: At time 453 fetched a *
+>myPC: At time 453 fetched a I
 ============== SIMULATION STEP 454 ==============
->myPC: At time 454 executed a *
+>myPC: At time 454 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 455 ==============
->myPC: At time 455 fetched a $
+>myPC: At time 455 fetched a I
 ============== SIMULATION STEP 456 ==============
->myPC: At time 456 executed a $
- >myOS: Exiting the running process
+>myPC: At time 456 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 457 ==============
->myPC: At time 457 fetched a X
+>myPC: At time 457 fetched a I
 ============== SIMULATION STEP 458 ==============
->myPC: At time 458 executed a X
- >myOS: Finished exiting program 5
-  >Exit: finished exiting process 18. Starting coalesce
+>myPC: At time 458 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 459 ==============
->myPC: At time 459 fetched a N
+>myPC: At time 459 fetched a I
 ============== SIMULATION STEP 460 ==============
->myPC: At time 460 executed a N
- >myOS: Coalesce partition 9
-  >Coalesce : No adjacent free partitions to merge.
-  >Coalesce: Finished coalescing partition 9.Starting Process Scheduler
->User: Pressed button 2
+>myPC: At time 460 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 461 ==============
->myPC: At time 461 fetched a S
->User: Pressed button 2
+>myPC: At time 461 fetched a I
 ============== SIMULATION STEP 462 ==============
->myPC: At time 462 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 19
+>myPC: At time 462 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 463 ==============
->myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
->myPC: At time 463 fetched a *
+>myPC: At time 463 fetched a I
 ============== SIMULATION STEP 464 ==============
->myPC: At time 464 executed a *
+>myPC: At time 464 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 465 ==============
- >MyOS: suspending process 19
- >MyOS: adding suspended process (19) to ready queue
->myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
->myPC: At time 465 fetched a *
+>myPC: At time 465 fetched a I
 ============== SIMULATION STEP 466 ==============
->myPC: At time 466 executed a *
+>myPC: At time 466 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 467 ==============
->myPC: At time 467 fetched a M
+>myPC: At time 467 fetched a I
 ============== SIMULATION STEP 468 ==============
->myPC: At time 468 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
->User: Pressed button 3
+>myPC: At time 468 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 469 ==============
->myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
->myPC: At time 469 fetched a C
+>myPC: At time 469 fetched a I
 ============== SIMULATION STEP 470 ==============
->myPC: At time 470 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 21 created at partition 1 (BA 9). Starting process admitter
+>myPC: At time 470 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 471 ==============
->myPC: At time 471 fetched a A
+>myPC: At time 471 fetched a I
 ============== SIMULATION STEP 472 ==============
->myPC: At time 472 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 21 to the readyQueue. Starting Scheduler
->User: Pressed button 1
+>myPC: At time 472 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 473 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 473 fetched a *
+>myPC: At time 473 fetched a I
 ============== SIMULATION STEP 474 ==============
->myPC: At time 474 executed a *
+>myPC: At time 474 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 475 ==============
->myPC: At time 475 fetched a M
+>myPC: At time 475 fetched a I
 ============== SIMULATION STEP 476 ==============
->myPC: At time 476 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 67 was found.Starting Process Creator
+>myPC: At time 476 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 477 ==============
->myPC: At time 477 fetched a C
+>myPC: At time 477 fetched a I
 ============== SIMULATION STEP 478 ==============
->myPC: At time 478 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 22 created at partition -1 (BA 67). Starting process admitter
+>myPC: At time 478 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 479 ==============
->myPC: At time 479 fetched a A
+>myPC: At time 479 fetched a I
 ============== SIMULATION STEP 480 ==============
->myPC: At time 480 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 22 to the readyQueue. Starting Scheduler
+>myPC: At time 480 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 481 ==============
->myPC: At time 481 fetched a *
+>myPC: At time 481 fetched a I
 ============== SIMULATION STEP 482 ==============
->myPC: At time 482 executed a *
+>myPC: At time 482 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 483 ==============
->myPC: At time 483 fetched a M
+>myPC: At time 483 fetched a I
 ============== SIMULATION STEP 484 ==============
->myPC: At time 484 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 84 was found.Starting Process Creator
+>myPC: At time 484 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 485 ==============
->myPC: At time 485 fetched a C
+>myPC: At time 485 fetched a I
 ============== SIMULATION STEP 486 ==============
->myPC: At time 486 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 23 created at partition -1 (BA 84). Starting process admitter
+>myPC: At time 486 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 487 ==============
->myPC: At time 487 fetched a A
+>myPC: At time 487 fetched a I
 ============== SIMULATION STEP 488 ==============
->myPC: At time 488 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 23 to the readyQueue. Starting Scheduler
+>myPC: At time 488 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 489 ==============
->myPC: At time 489 fetched a S
+>myPC: At time 489 fetched a I
 ============== SIMULATION STEP 490 ==============
->myPC: At time 490 executed a S
- >myOS: Finished scheduling
-  >Scheduler: suspended process found (19) in the ready queue
-  >Scheduler: selected from the ready queue process 19
+>myPC: At time 490 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 491 ==============
->myPC: At time 491 fetched a *
+>myPC: At time 491 fetched a I
 ============== SIMULATION STEP 492 ==============
->myPC: At time 492 executed a *
+>myPC: At time 492 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 493 ==============
->myPC: At time 493 fetched a *
+>myPC: At time 493 fetched a I
 ============== SIMULATION STEP 494 ==============
->myPC: At time 494 executed a *
+>myPC: At time 494 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 495 ==============
->myPC: At time 495 fetched a *
+>myPC: At time 495 fetched a I
 ============== SIMULATION STEP 496 ==============
->myPC: At time 496 executed a *
-============== SIMULATION STEP
+>myPC: At time 496 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 497 ==============
+>myPC: At time 497 fetched a I
+============== SIMULATION STEP 498 ==============
+>myPC: At time 498 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 499 ==============
+>myPC: At time 499 fetched a I
+============== SIMULATION STEP 500 ==============
+>myPC: At time 500 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 501 ==============
+>myPC: At time 501 fetched a I
+============== SIMULATION STEP 502 ==============
+>myPC: At time 502 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 503 ==============
+>myPC: At time 503 fetched a I
+============== SIMULATION STEP 504 ==============
+>myPC: At time 504 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 505 ==============
+>myPC: At time 505 fetched a I
+============== SIMULATION STEP 506 ==============
+>myPC: At time 506 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 507 ==============
+>myPC: At time 507 fetched a I
+============== SIMULATION STEP 508 ==============
+>myPC: At time 508 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 509 ==============
+>myPC: At time 509 fetched a I
+============== SIMULATION STEP 510 ==============
+>myPC: At time 510 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 511 ==============
+>myPC: At time 511 fetched a I
+============== SIMULATION STEP 512 ==============
+>myPC: At time 512 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 513 ==============
+>myPC: At time 513 fetched a I
+============== SIMULATION STEP 514 ==============
+>myPC: At time 514 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 515 ==============
+>myPC: At time 515 fetched a I
+============== SIMULATION STEP 516 ==============
+>myPC: At time 516 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 517 ==============
+>myPC: At time 517 fetched a I
+============== SIMULATION STEP 518 ==============
+>myPC: At time 518 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 519 ==============
+>myPC: At time 519 fetched a I
+============== SIMULATION STEP 520 ==============
+>myPC: At time 520 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 521 ==============
+>myPC: At time 521 fetched a I
+============== SIMULATION STEP 522 ==============
+>myPC: At time 522 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 523 ==============
+>myPC: At time 523 fetched a I
+============== SIMULATION STEP 524 ==============
+>myPC: At time 524 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 525 ==============
+>myPC: At time 525 fetched a I
+============== SIMULATION STEP 526 ==============
+>myPC: At time 526 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 527 ==============
+>myPC: At time 527 fetched a I
+============== SIMULATION STEP 528 ==============
+>myPC: At time 528 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 529 ==============
+>myPC: At time 529 fetched a I
+============== SIMULATION STEP 530 ==============
+>myPC: At time 530 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 531 ==============
+>myPC: At time 531 fetched a I
+============== SIMULATION STEP 532 ==============
+>myPC: At time 532 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 533 ==============
+>myPC: At time 533 fetched a I
+============== SIMULATION STEP 534 ==============
+>myPC: At time 534 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 535 ==============
+>myPC: At time 535 fetched a I
+============== SIMULATION STEP 536 ==============
+>myPC: At time 536 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 537 ==============
+>myPC: At time 537 fetched a I
+============== SIMULATION STEP 538 ==============
+>myPC: At time 538 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 539 ==============
+>myPC: At time 539 fetched a I
+============== SIMULATION STEP 540 ==============
+>myPC: At time 540 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 541 ==============
+>myPC: At time 541 fetched a I
+============== SIMULATION STEP 542 ==============
+>myPC: At time 542 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 543 ==============
+>myPC: At time 543 fetched a I
+============== SIMULATION STEP 544 ==============
+>myPC: At time 544 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 545 ==============
+>myPC: At time 545 fetched a I
+============== SIMULATION STEP 546 ==============
+>myPC: At time 546 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 547 ==============
+>myPC: At time 547 fetched a I
+============== SIMULATION STEP 548 ==============
+>myPC: At time 548 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 549 ==============
+>myPC: At time 549 fetched a I
+============== SIMULATION STEP 550 ==============
+>myPC: At time 550 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 551 ==============
+>myPC: At time 551 fetched a I
+============== SIMULATION STEP 552 ==============
+>myPC: At time 552 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 553 ==============
+>myPC: At time 553 fetched a I
+============== SIMULATION STEP 554 ==============
+>myPC: At time 554 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 555 ==============
+>myPC: At time 555 fetched a I
+============== SIMULATION STEP 556 ==============
+>myPC: At time 556 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 557 ==============
+>myPC: At time 557 fetched a I
+============== SIMULATION STEP 558 ==============
+>myPC: At time 558 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 559 ==============
+>myPC: At time 559 fetched a I
+============== SIMULATION STEP 560 ==============
+>myPC: At time 560 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 561 ==============
+>myPC: At time 561 fetched a I
+============== SIMULATION STEP 562 ==============
+>myPC: At time 562 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 563 ==============
+>myPC: At time 563 fetched a I
+============== SIMULATION STEP 564 ==============
+>myPC: At time 564 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 565 ==============
+>myPC: At time 565 fetched a I
+============== SIMULATION STEP 566 ==============
+>myPC: At time 566 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 567 ==============
+>myPC: At time 567 fetched a I
+============== SIMULATION STEP 568 ==============
+>myPC: At time 568 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 569 ==============
+>myPC: At time 569 fetched a I
+============== SIMULATION STEP 570 ==============
+>myPC: At time 570 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 571 ==============
+>myPC: At time 571 fetched a I
+============== SIMULATION STEP 572 ==============
+>myPC: At time 572 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 573 ==============
+>myPC: At time 573 fetched a I
+============== SIMULATION STEP 574 ==============
+>myPC: At time 574 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 575 ==============
+>myPC: At time 575 fetched a I
+============== SIMULATION STEP 576 ==============
+>myPC: At time 576 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 577 ==============
+>myPC: At time 577 fetched a I
+============== SIMULATION STEP 578 ==============
+>myPC: At time 578 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 579 ==============
+>myPC: At time 579 fetched a I
+============== SIMULATION STEP 580 ==============
+>myPC: At time 580 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 581 ==============
+>myPC: At time 581 fetched a I
+============== SIMULATION STEP 582 ==============
+>myPC: At time 582 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 583 ==============
+>myPC: At time 583 fetched a I
+============== SIMULATION STEP 584 ==============
+>myPC: At time 584 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 585 ==============
+>myPC: At time 585 fetched a I
+============== SIMULATION STEP 586 ==============
+>myPC: At time 586 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 587 ==============
+>myPC: At time 587 fetched a I
+============== SIMULATION STEP 588 ==============
+>myPC: At time 588 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 589 ==============
+>myPC: At time 589 fetched a I
+============== SIMULATION STEP 590 ==============
+>myPC: At time 590 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 591 ==============
+>myPC: At time 591 fetched a I
+============== SIMULATION STEP 592 ==============
+>myPC: At time 592 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 593 ==============
+>myPC: At time 593 fetched a I
+============== SIMULATION STEP 594 ==============
+>myPC: At time 594 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 595 ==============
+>myPC: At time 595 fetched a I
+============== SIMULATION STEP 596 ==============
+>myPC: At time 596 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 597 ==============
+>myPC: At time 597 fetched a I
+============== SIMULATION STEP 598 ==============
+>myPC: At time 598 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 599 ==============
+>myPC: At time 599 fetched a I
+============== SIMULATION STEP 600 ==============
+>myPC: At time 600 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 601 ==============
+>myPC: At time 601 fetched a I
+============== SIMULATION STEP 602 ==============
+>myPC: At time 602 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 603 ==============
+>myPC: At time 603 fetched a I
+============== SIMULATION STEP 604 ==============
+>myPC: At time 604 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 605 ==============
+>myPC: At time 605 fetched a I
+============== SIMULATION STEP 606 ==============
+>myPC: At time 606 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 607 ==============
+>myPC: At time 607 fetched a I
+============== SIMULATION STEP 608 ==============
+>myPC: At time 608 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 609 ==============
+>myPC: At time 609 fetched a I
+============== SIMULATION STEP 610 ==============
+>myPC: At time 610 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 611 ==============
+>myPC: At time 611 fetched a I
+============== SIMULATION STEP 612 ==============
+>myPC: At time 612 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 613 ==============
+>myPC: At time 613 fetched a I
+============== SIMULATION STEP 614 ==============
+>myPC: At time 614 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 615 ==============
+>myPC: At time 615 fetched a I
+============== SIMULATION STEP 616 ==============
+>myPC: At time 616 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 617 ==============
+>myPC: At time 617 fetched a I
+============== SIMULATION STEP 618 ==============
+>myPC: At time 618 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 619 ==============
+>myPC: At time 619 fetched a I
+============== SIMULATION STEP 620 ==============
+>myPC: At time 620 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 621 ==============
+>myPC: At time 621 fetched a I
+============== SIMULATION STEP 622 ==============
+>myPC: At time 622 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 623 ==============
+>myPC: At time 623 fetched a I
+============== SIMULATION STEP 624 ==============
+>myPC: At time 624 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 625 ==============
+>myPC: At time 625 fetched a I
+============== SIMULATION STEP 626 ==============
+>myPC: At time 626 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 627 ==============
+>myPC: At time 627 fetched a I
+============== SIMULATION STEP 628 ==============
+>myPC: At time 628 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 629 ==============
+>myPC: At time 629 fetched a I
+============== SIMULATION STEP 630 ==============
+>myPC: At time 630 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 631 ==============
+>myPC: At time 631 fetched a I
+============== SIMULATION STEP 632 ==============
+>myPC: At time 632 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 633 ==============
+>myPC: At time 633 fetched a I
+============== SIMULATION STEP 634 ==============
+>myPC: At time 634 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 635 ==============
+>myPC: At time 635 fetched a I
+============== SIMULATION STEP 636 ==============
+>myPC: At time 636 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 637 ==============
+>myPC: At time 637 fetched a I
+============== SIMULATION STEP 638 ==============
+>myPC: At time 638 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 639 ==============
+>myPC: At time 639 fetched a I
+============== SIMULATION STEP 640 ==============
+>myPC: At time 640 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 641 ==============
+>myPC: At time 641 fetched a I
+============== SIMULATION STEP 642 ==============
+>myPC: At time 642 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 643 ==============
+>myPC: At time 643 fetched a I
+============== SIMULATION STEP 644 ==============
+>myPC: At time 644 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 645 ==============
+>myPC: At time 645 fetched a I
+============== SIMULATION STEP 646 ==============
+>myPC: At time 646 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 647 ==============
+>myPC: At time 647 fetched a I
+============== SIMULATION STEP 648 ==============
+>myPC: At time 648 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 649 ==============
+>myPC: At time 649 fetched a I
+============== SIMULATION STEP 650 ==============
+>myPC: At time 650 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 651 ==============
+>myPC: At time 651 fetched a I
+============== SIMULATION STEP 652 ==============
+>myPC: At time 652 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 653 ==============
+>myPC: At time 653 fetched a I
+============== SIMULATION STEP 654 ==============
+>myPC: At time 654 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 655 ==============
+>myPC: At time 655 fetched a I
+============== SIMULATION STEP 656 ==============
+>myPC: At time 656 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 657 ==============
+>myPC: At time 657 fetched a I
+============== SIMULATION STEP 658 ==============
+>myPC: At time 658 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 659 ==============
+>myPC: At time 659 fetched a I
+============== SIMULATION STEP 660 ==============
+>myPC: At time 660 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 661 ==============
+>myPC: At time 661 fetched a I
+============== SIMULATION STEP 662 ==============
+>myPC: At time 662 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 663 ==============
+>myPC: At time 663 fetched a I
+============== SIMULATION STEP 664 ==============
+>myPC: At time 664 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 665 ==============
+>myPC: At time 665 fetched a I
+============== SIMULATION STEP 666 ==============
+>myPC: At time 666 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 667 ==============
+>myPC: At time 667 fetched a I
+============== SIMULATION STEP 668 ==============
+>myPC: At time 668 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 669 ==============
+>myPC: At time 669 fetched a I
+============== SIMULATION STEP 670 ==============
+>myPC: At time 670 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 671 ==============
+>myPC: At time 671 fetched a I
+============== SIMULATION STEP 672 ==============
+>myPC: At time 672 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 673 ==============
+>myPC: At time 673 fetched a I
+============== SIMULATION STEP 674 ==============
+>myPC: At time 674 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 675 ==============
+>myPC: At time 675 fetched a I
+============== SIMULATION STEP 676 ==============
+>myPC: At time 676 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 677 ==============
+>myPC: At time 677 fetched a I
+============== SIMULATION STEP 678 ==============
+>myPC: At time 678 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 679 ==============
+>myPC: At time 679 fetched a I
+============== SIMULATION STEP 680 ==============
+>myPC: At time 680 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 681 ==============
+>myPC: At time 681 fetched a I
+============== SIMULATION STEP 682 ==============
+>myPC: At time 682 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 683 ==============
+>myPC: At time 683 fetched a I
+============== SIMULATION STEP 684 ==============
+>myPC: At time 684 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 685 ==============
+>myPC: At time 685 fetched a I
+============== SIMULATION STEP 686 ==============
+>myPC: At time 686 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 687 ==============
+>myPC: At time 687 fetched a I
+============== SIMULATION STEP 688 ==============
+>myPC: At time 688 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 689 ==============
+>myPC: At time 689 fetched a I
+============== SIMULATION STEP 690 ==============
+>myPC: At time 690 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 691 ==============
+>myPC: At time 691 fetched a I
+============== SIMULATION STEP 692 ==============
+>myPC: At time 692 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 693 ==============
+>myPC: At time 693 fetched a I
+============== SIMULATION STEP 694 ==============
+>myPC: At time 694 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 695 ==============
+>myPC: At time 695 fetched a I
+============== SIMULATION STEP 696 ==============
+>myPC: At time 696 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 697 ==============
+>myPC: At time 697 fetched a I
+============== SIMULATION STEP 698 ==============
+>myPC: At time 698 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 699 ==============
+>myPC: At time 699 fetched a I
+============== SIMULATION STEP 700 ==============
+>myPC: At time 700 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 701 ==============
+>myPC: At time 701 fetched a I
+============== SIMULATION STEP 702 ==============
+>myPC: At time 702 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 703 ==============
+>myPC: At time 703 fetched a I
+============== SIMULATION STEP 704 ==============
+>myPC: At time 704 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 705 ==============
+>myPC: At time 705 fetched a I
+============== SIMULATION STEP 706 ==============
+>myPC: At time 706 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 707 ==============
+>myPC: At time 707 fetched a I
+============== SIMULATION STEP 708 ==============
+>myPC: At time 708 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 709 ==============
+>myPC: At time 709 fetched a I
+============== SIMULATION STEP 710 ==============
+>myPC: At time 710 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 711 ==============
+>myPC: At time 711 fetched a I
+============== SIMULATION STEP 712 ==============
+>myPC: At time 712 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 713 ==============
+>myPC: At time 713 fetched a I
+============== SIMULATION STEP 714 ==============
+>myPC: At time 714 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 715 ==============
+>myPC: At time 715 fetched a I
+============== SIMULATION STEP 716 ==============
+>myPC: At time 716 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 717 ==============
+>myPC: At time 717 fetched a I
+============== SIMULATION STEP 718 ==============
+>myPC: At time 718 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 719 ==============
+>myPC: At time 719 fetched a I
+============== SIMULATION STEP 720 ==============
+>myPC: At time 720 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 721 ==============
+>myPC: At time 721 fetched a I
+============== SIMULATION STEP 722 ==============
+>myPC: At time 722 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 723 ==============
+>myPC: At time 723 fetched a I
+============== SIMULATION STEP 724 ==============
+>myPC: At time 724 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 725 ==============
+>myPC: At time 725 fetched a I
+============== SIMULATION STEP 726 ==============
+>myPC: At time 726 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 727 ==============
+>myPC: At time 727 fetched a I
+============== SIMULATION STEP 728 ==============
+>myPC: At time 728 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 729 ==============
+>myPC: At time 729 fetched a I
+============== SIMULATION STEP 730 ==============
+>myPC: At time 730 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 731 ==============
+>myPC: At time 731 fetched a I
+============== SIMULATION STEP 732 ==============
+>myPC: At time 732 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 733 ==============
+>myPC: At time 733 fetched a I
+============== SIMULATION STEP 734 ==============
+>myPC: At time 734 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 735 ==============
+>myPC: At time 735 fetched a I
+============== SIMULATION STEP 736 ==============
+>myPC: At time 736 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 737 ==============
+>myPC: At time 737 fetched a I
+============== SIMULATION STEP 738 ==============
+>myPC: At time 738 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 739 ==============
+>myPC: At time 739 fetched a I
+============== SIMULATION STEP 740 ==============
+>myPC: At time 740 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 741 ==============
+>myPC: At time 741 fetched a I
+============== SIMULATION STEP 742 ==============
+>myPC: At time 742 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 743 ==============
+>myPC: At time 743 fetched a I
+============== SIMULATION STEP 744 ==============
+>myPC: At time 744 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 745 ==============
+>myPC: At time 745 fetched a I
+============== SIMULATION STEP 746 ==============
+>myPC: At time 746 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 747 ==============
+>myPC: At time 747 fetched a I
+============== SIMULATION STEP 748 ==============
+>myPC: At time 748 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 749 ==============
+>myPC: At time 749 fetched a I
+============== SIMULATION STEP 750 ==============
+>myPC: At time 750 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 751 ==============
+>myPC: At time 751 fetched a I
+============== SIMULATION STEP 752 ==============
+>myPC: At time 752 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 753 ==============
+>myPC: At time 753 fetched a I
+============== SIMULATION STEP 754 ==============
+>myPC: At time 754 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 755 ==============
+>myPC: At time 755 fetched a I
+============== SIMULATION STEP 756 ==============
+>myPC: At time 756 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 757 ==============
+>myPC: At time 757 fetched a I
+============== SIMULATION STEP 758 ==============
+>myPC: At time 758 executed a I
+ >myOS: System is idle. Waiting for user input
+============== SIMULATION STEP 759 ==============
+>myPC: At time 759 fetched a I
+============== SIMULATION STEP 760 ==============
+>myPC: At time 760 executed a I
+ >myOS: System is idle. Waiting

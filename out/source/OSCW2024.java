@@ -775,20 +775,7 @@ public class CompactKernel extends KernelProcess{
 
     // Compact partitions
     sort(partitionTable);
-    sim.addToLog("---------------------------------");
-    sim.addToLog("Sorted: ");
-    for (int i = 0; i < partitionTable.size(); i++) {
-      sim.addToLog("i: " + i + " isFree: " + partitionTable.get(i).isFree);
-    }
-    sim.addToLog("---------------------------------");
-    
-    sim.addToLog("---------------------------------");
-    sim.addToLog("Merged: " + partitionTable);
     mergePartitions(partitionTable);
-    for (int i = 0; i < partitionTable.size(); i++) {
-      sim.addToLog("i: " + i + " isFree: " + partitionTable.get(i).isFree + " size: " + partitionTable.get(i).size);
-    }
-    sim.addToLog("---------------------------------");
 
     // Log the final partition tables once
     sim.addToLog(myOS.partitionTable.toString());
@@ -810,36 +797,22 @@ private void sort(ArrayList<Partition> partitionTable) {
       }
       // If no two elements were
       // swapped by inner loop, then break
-      if (swapped == false)
-          break;
+      if (!swapped) break;
     }
   }
 
   private void mergePartitions(ArrayList<Partition> partitionTable) {
     int i = 0;
-    int n = partitionTable.size();
-    boolean isMerged = false;
-    // Iterate until you find the first free partition
-    while (i < n && !isMerged) {
-      // If the partition is free, merge this with the rest of the partitions
-      Partition firstPartition = partitionTable.get(i);
-      if (firstPartition.isFree) {
-        // Get the sum of all the sizes
-        int sum = firstPartition.size;
-        Partition currentPartition;
-        for (int j = i + 1; j < n; j++) {
-          currentPartition = partitionTable.get(j);
-          sum += currentPartition.size;
-          // Remove the partition from the partition table
-          partitionTable.remove(j);
-          n--;
+    while (i < partitionTable.size() - 1) {
+        Partition currentPartition = partitionTable.get(i);
+        Partition nextPartition = partitionTable.get(i + 1);
+        if (currentPartition.isFree && nextPartition.isFree) {
+            // Merge current and next partitions
+            currentPartition.size += nextPartition.size;
+            partitionTable.remove(i + 1); // Remove the next partition
+        } else {
+            i++; // Move to the next partition only if no merge happened
         }
-        // Make the first partition's size the sum of all the partitions
-        firstPartition.size = sum;
-        // Break the loop
-        isMerged = true;
-      }
-      i++;
     }
   }
 
