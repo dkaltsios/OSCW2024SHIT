@@ -4,106 +4,106 @@ import java.util.Collections;
 // Shortest Job First Scheduler
 // Pick the process with the shortest burst time
 public class ShortestJobFirstScheduler extends ShortTermScheduler{
-    
-    ShortestJobFirstScheduler() {
-        super();
-        type = SDLRTYPE.NONPREEMPTIVE;
-    }
-    
-    public UserProcess selectUserProcess() {
-        UserProcess result = null;
-        if (!myOS.readyQueue.isEmpty()) {
-            result = myOS.readyQueue.get(0);
-            for (int i = 1; i < myOS.readyQueue.size(); i++) {
-                if (result.codeSize > myOS.readyQueue.get(i).codeSize) {
-                    result = myOS.readyQueue.get(i);
-                }
-            }
+  
+  ShortestJobFirstScheduler() {
+    super();
+    type = SDLRTYPE.NONPREEMPTIVE;
+  }
+  
+  public UserProcess selectUserProcess() {
+    UserProcess result = null;
+    if (!myOS.readyQueue.isEmpty()) {
+      result = myOS.readyQueue.get(0);
+      for (int i = 1; i < myOS.readyQueue.size(); i++) {
+        if (result.codeSize > myOS.readyQueue.get(i).codeSize) {
+          result = myOS.readyQueue.get(i);
         }
-        return result;
+      }
     }
-    
+    return result;
+  }
+  
 }
 
 ///////////////////////////////////////////////////////////////
 // Priority Queue Scheduler
 // Pick the first process with the highest priority
 public class PriorityQueueScheduler extends ShortTermScheduler{
-    
-    PriorityQueueScheduler() {
-        super();
-        type = SDLRTYPE.PREEMPTIVE;
-    }
-    
-    public UserProcess selectUserProcess() {
-        UserProcess result = null;
-        if (!myOS.readyQueue.isEmpty()) {
-            result = myOS.readyQueue.get(0);
-            for (int i = 1; i < myOS.readyQueue.size(); i++) {
-                if (result.priority > myOS.readyQueue.get(i).priority) {
-                    result = myOS.readyQueue.get(i);
-                } else if (result.priority == myOS.readyQueue.get(i).priority) {
-                    if (result.programCounter > myOS.readyQueue.get(i).programCounter) {
-                        result = myOS.readyQueue.get(i);
-                    }
-                }
-            } 
+  
+  PriorityQueueScheduler() {
+    super();
+    type = SDLRTYPE.PREEMPTIVE;
+  }
+  
+  public UserProcess selectUserProcess() {
+    UserProcess result = null;
+    if (!myOS.readyQueue.isEmpty()) {
+      result = myOS.readyQueue.get(0);
+      for (int i = 1; i < myOS.readyQueue.size(); i++) {
+        if (result.priority > myOS.readyQueue.get(i).priority) {
+          result = myOS.readyQueue.get(i);
+        } else if (result.priority == myOS.readyQueue.get(i).priority) {
+          if (result.programCounter > myOS.readyQueue.get(i).programCounter) {
+            result = myOS.readyQueue.get(i);
+          }
         }
-        return result;
+      } 
     }
-    
+    return result;
+  }
+  
 }
 
 ///////////////////////////////////////////////////////////////
 // First Come First Serve Scheduler
 // Pick the first process in the ready queue
 public class FCFScheduler extends ShortTermScheduler{
-    
-    FCFScheduler() {
-        super();
-        //NONPREMPTIVE HAS ERRORIN SIMULATOR
-        type = SDLRTYPE.PREEMPTIVE;
+  
+  FCFScheduler() {
+    super();
+    //NONPREMPTIVE HAS ERRORIN SIMULATOR
+    type = SDLRTYPE.PREEMPTIVE;
+  }
+  
+  public UserProcess selectUserProcess() {
+    UserProcess result = null;
+    if (myOS.suspended != null) {
+      sim.addToLog("  >Scheduler: suspended process found (" + myOS.suspended.pid + ") in the ready queue");
+      result = myOS.suspended;
+      myOS.suspended = null;
+    } else if (!myOS.readyQueue.isEmpty()) {
+      result = myOS.readyQueue.get(0); 
     }
-    
-    public UserProcess selectUserProcess() {
-        UserProcess result = null;
-        if (myOS.suspended != null) {
-            sim.addToLog("  >Scheduler: suspended process found (" + myOS.suspended.pid + ") in the ready queue");
-            result = myOS.suspended;
-            myOS.suspended = null;
-        } else if (!myOS.readyQueue.isEmpty()) {
-            result = myOS.readyQueue.get(0); 
-        }
-        return result;
-    }
+    return result;
+  }
 }
 
 ///////////////////////////////////////////////////////////////
 // Shortest Remaining Time Next Scheduler
 // Pick the process with the shortest remaining burst time
 public class SRTNScheduler extends ShortTermScheduler{
-    
-    SRTNScheduler() {
-        super();
-        type = SDLRTYPE.PREEMPTIVE;
-    }
-    
-    public UserProcess selectUserProcess() {
-        UserProcess result = null;
-        if (myOS.suspended != null) {
-            sim.addToLog("  >Scheduler: suspended process found (" + myOS.suspended.pid + ") in the ready queue");
-            result = myOS.suspended;
-            myOS.suspended = null;
-        } else if (!myOS.readyQueue.isEmpty()) {
-            result = myOS.readyQueue.get(0);
-            for (int i = 1; i < myOS.readyQueue.size(); i++) {
-                if ((result.codeSize - result.programCounter) > (myOS.readyQueue.get(i).codeSize - myOS.readyQueue.get(i).programCounter)) {
-                    result = myOS.readyQueue.get(i);
-                }
-            }
+  
+  SRTNScheduler() {
+    super();
+    type = SDLRTYPE.PREEMPTIVE;
+  }
+  
+  public UserProcess selectUserProcess() {
+    UserProcess result = null;
+    if (myOS.suspended != null) {
+      sim.addToLog("  >Scheduler: suspended process found (" + myOS.suspended.pid + ") in the ready queue");
+      result = myOS.suspended;
+      myOS.suspended = null;
+    } else if (!myOS.readyQueue.isEmpty()) {
+      result = myOS.readyQueue.get(0);
+      for (int i = 1; i < myOS.readyQueue.size(); i++) {
+        if ((result.codeSize - result.programCounter) > (myOS.readyQueue.get(i).codeSize - myOS.readyQueue.get(i).programCounter)) {
+          result = myOS.readyQueue.get(i);
         }
-        return result;
+      }
     }
+    return result;
+  }
 }
 
 ///////////////////////////////////////////////////////////////
@@ -179,16 +179,16 @@ public class WorstFitMM extends MemoryManagerAlgorithm{
 
 // Split the selected partition into two partitions with the process size and the remaining size
 private void splitPartition(Partition partition, int processSize) {
-    int partitionBSize = partition.size - processSize;
-    int partitionABA = partition.baseAddress;
-    int partitionBBA = partitionABA + processSize;
-    int partitionId = myOS.partitionTable.indexOf(partition);
-    Partition partitionA = new Partition(partitionABA, processSize);
-    partitionA.isFree = false;
-    Partition partitionB = new Partition(partitionBBA, partitionBSize);
-    myOS.partitionTable.remove(partition);
-    myOS.partitionTable.add(partitionId, partitionA);
-    myOS.partitionTable.add(partitionId + 1, partitionB);
+  int partitionBSize = partition.size - processSize;
+  int partitionABA = partition.baseAddress;
+  int partitionBBA = partitionABA + processSize;
+  int partitionId = myOS.partitionTable.indexOf(partition);
+  Partition partitionA = new Partition(partitionABA, processSize);
+  partitionA.isFree = false;
+  Partition partitionB = new Partition(partitionBBA, partitionBSize);
+  myOS.partitionTable.remove(partition);
+  myOS.partitionTable.add(partitionId, partitionA);
+  myOS.partitionTable.add(partitionId + 1, partitionB);
 }
 
 ///////////////////////////////////////////////////////////////
@@ -196,104 +196,104 @@ private void splitPartition(Partition partition, int processSize) {
 // Coalesce Kernel
 // Check if there are adjacentfree partitions to merge with the cleared partition
 public class CoalesceKernel extends KernelProcess{
-    CoalesceKernel(String name, String code, int IRQ) {
-        super(name, code, IRQ);
-    }
+  CoalesceKernel(String name, String code, int IRQ) {
+    super(name, code, IRQ);
+  }
+  
+  public void finish() {
+    Partition deletePartition = myOS.searchPartitionTable(myOS.deleteProcess.baseAddress);
+    int deletePartitionIndex = myOS.partitionTable.indexOf(deletePartition);
     
-    public void finish() {
-        Partition deletePartition = myOS.searchPartitionTable(myOS.deleteProcess.baseAddress);
-        int deletePartitionIndex = myOS.partitionTable.indexOf(deletePartition);
-        
-        if (isNotFirst(deletePartitionIndex)) {
-            if (isNotLast(deletePartitionIndex)) {
-                if (isPreviousAndNextFree(deletePartitionIndex)) {
-                    coalescePreviousAndNext(deletePartitionIndex);
-                    sim.addToLog("  >Coalesce: Merged previous, current, and next partitions.");
-                } else if (isPreviousFree(deletePartitionIndex)) {
-                    coalescePrevious(deletePartitionIndex);
-                    sim.addToLog("  >Coalesce : Merged previous partition with current.");
-                } else if (isNextFree(deletePartitionIndex)) {
-                    coalesceNext(deletePartitionIndex);
-                    sim.addToLog("  >Coalesce: Merged next partition with current.");
-                } else {
-                    sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
-                }
-            } else {
-                if (isPreviousFree(deletePartitionIndex)) {
-                    coalescePrevious(deletePartitionIndex);
-                    sim.addToLog("  >Coalesce: Merged previous partition with current.");
-                } else {
-                    sim.addToLog("  >Coalesce : No adjacentfree partitions to merge.");
-                }
-            }
-        } else if (isNotLast(deletePartitionIndex)) {
-            if (isNextFree(deletePartitionIndex)) {
-                coalesceNext(deletePartitionIndex);
-                sim.addToLog("  >Coalesce : Merged next partition with current.");
-            } else {
-                sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
-            }
+    if (isNotFirst(deletePartitionIndex)) {
+      if (isNotLast(deletePartitionIndex)) {
+        if (isPreviousAndNextFree(deletePartitionIndex)) {
+          coalescePreviousAndNext(deletePartitionIndex);
+          sim.addToLog("  >Coalesce: Merged previous, current, and next partitions.");
+        } else if (isPreviousFree(deletePartitionIndex)) {
+          coalescePrevious(deletePartitionIndex);
+          sim.addToLog("  >Coalesce : Merged previous partition with current.");
+        } else if (isNextFree(deletePartitionIndex)) {
+          coalesceNext(deletePartitionIndex);
+          sim.addToLog("  >Coalesce: Merged next partition with current.");
         } else {
-            sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
+          sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
         }
-        
-        sim.addToLog("  >Coalesce: Finished coalescing partition " + deletePartition.baseAddress + ".Starting Process Scheduler");
-        myOS.startKernelProcess("scheduler");
-        this.state = STATE.READY;
-    } 
-    //Position check
-    //Check if partition is not first
-    private boolean isNotFirst(int currentPartitionIndex) {
-        return currentPartitionIndex > 0;
-    }
-    //Check if partition is not last
-    private boolean isNotLast(int currentPartitionIndex) {
-        return currentPartitionIndex < myOS.partitionTable.size() - 1;
+      } else {
+        if (isPreviousFree(deletePartitionIndex)) {
+          coalescePrevious(deletePartitionIndex);
+          sim.addToLog("  >Coalesce: Merged previous partition with current.");
+        } else {
+          sim.addToLog("  >Coalesce : No adjacentfree partitions to merge.");
+        }
+      }
+    } else if (isNotLast(deletePartitionIndex)) {
+      if (isNextFree(deletePartitionIndex)) {
+        coalesceNext(deletePartitionIndex);
+        sim.addToLog("  >Coalesce : Merged next partition with current.");
+      } else {
+        sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
+      }
+    } else {
+      sim.addToLog("  >Coalesce : No adjacent free partitions to merge.");
     }
     
-    //Free check
-    //Check if previous and next partitions are free
-    private boolean isPreviousAndNextFree(int currentPartitionIndex) {
-        return isPreviousFree(currentPartitionIndex) && isNextFree(currentPartitionIndex);
-    }
-    //Check if previous partition is free
-    private boolean isPreviousFree(int currentPartitionIndex) {
-        Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
-        return previousPartition.isFree;
-    }
-    //Check if next partition is free
-    private boolean isNextFree(int currentPartitionIndex) {
-        Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
-        return nextPartition.isFree;
-    } 
-    
-    //Coalesce
-    //Merge previous, current, and next partitions
-    private void coalescePreviousAndNext(int currentPartitionIndex) {
-        //Merge partitions previous and next with current
-        Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
-        Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
-        Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
-        previousPartition.size += currentPartition.size + nextPartition.size;
-        myOS.partitionTable.remove(currentPartition);
-        myOS.partitionTable.remove(nextPartition);
-    }
-    //Merge previous with current
-    private void coalescePrevious(int currentPartitionIndex) {
-        //Merge partitions previous with current
-        Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
-        Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
-        previousPartition.size += currentPartition.size;
-        myOS.partitionTable.remove(currentPartition);
-    }
-    //Merge next with current
-    private void coalesceNext(int currentPartitionIndex) {
-        //Merge partitions next with current
-        Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
-        Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
-        currentPartition.size += nextPartition.size;
-        myOS.partitionTable.remove(nextPartition);
-    }
+    sim.addToLog("  >Coalesce: Finished coalescing partition " + deletePartition.baseAddress + ".Starting Process Scheduler");
+    myOS.startKernelProcess("scheduler");
+    this.state = STATE.READY;
+  } 
+  //Position check
+  //Check if partition is not first
+  private boolean isNotFirst(int currentPartitionIndex) {
+    return currentPartitionIndex > 0;
+  }
+  //Check if partition is not last
+  private boolean isNotLast(int currentPartitionIndex) {
+    return currentPartitionIndex < myOS.partitionTable.size() - 1;
+  }
+  
+  //Free check
+  //Check if previous and next partitions are free
+  private boolean isPreviousAndNextFree(int currentPartitionIndex) {
+    return isPreviousFree(currentPartitionIndex) && isNextFree(currentPartitionIndex);
+  }
+  //Check if previous partition is free
+  private boolean isPreviousFree(int currentPartitionIndex) {
+    Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
+    return previousPartition.isFree;
+  }
+  //Check if next partition is free
+  private boolean isNextFree(int currentPartitionIndex) {
+    Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
+    return nextPartition.isFree;
+  } 
+  
+  //Coalesce
+  //Merge previous, current, and next partitions
+  private void coalescePreviousAndNext(int currentPartitionIndex) {
+    //Merge partitions previous and next with current
+    Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
+    Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
+    Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
+    previousPartition.size += currentPartition.size + nextPartition.size;
+    myOS.partitionTable.remove(currentPartition);
+    myOS.partitionTable.remove(nextPartition);
+  }
+  //Merge previous with current
+  private void coalescePrevious(int currentPartitionIndex) {
+    //Merge partitions previous with current
+    Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
+    Partition previousPartition = myOS.partitionTable.get(currentPartitionIndex - 1);
+    previousPartition.size += currentPartition.size;
+    myOS.partitionTable.remove(currentPartition);
+  }
+  //Merge next with current
+  private void coalesceNext(int currentPartitionIndex) {
+    //Merge partitions next with current
+    Partition currentPartition = myOS.partitionTable.get(currentPartitionIndex);
+    Partition nextPartition = myOS.partitionTable.get(currentPartitionIndex + 1);
+    currentPartition.size += nextPartition.size;
+    myOS.partitionTable.remove(nextPartition);
+  }
 }
 
 ///////////////////////////////////////////////////////////////
@@ -305,51 +305,105 @@ public class CompactKernel extends KernelProcess{
   
   public void finish() {
     ArrayList<Partition> partitionTable = myOS.partitionTable;
-
+    
     // Compact partitions
     sort(partitionTable);
-    mergePartitions(partitionTable);
-
+    // mergePartitions(partitionTable);
+    
     // Log the final partition tables once
-    sim.addToLog(myOS.partitionTable.toString());
+    for (Partition partition : partitionTable) {
+      sim.addToLog("  >Compact: Partition " + partition.baseAddress + " - " + (partition.baseAddress + partition.size - 1) + " (" + partition.size + " bytes) " + (partition.isFree ? "is free" : "is occupied"));
+    }
     myOS.startKernelProcess("scheduler");
   }
-
-private void sort(ArrayList<Partition> partitionTable) {
-    int i, j;
-    boolean swapped;
-    int n = partitionTable.size();
-    for (i = 0; i < n - 1; i++) {
-      swapped = false;
-      for (j = 0; j < n - i - 1; j++) {
-        if (isSwappable(partitionTable, j)) {
-            // Swap
-            Collections.swap(partitionTable, j, j + 1);
-            swapped = true;
+  
+  private void sort(ArrayList<Partition> partitionTable) {
+    int i = 1, f = partitionTable.size();
+    int baseAddress = partitionTable.get(0).size;
+    ArrayList<Partition> newPartitionTable = new ArrayList<Partition>();
+    int freeSpace = 0;
+    
+    while(i < f) {
+      if (partitionTable.get(i).isFree) {
+        freeSpace += partitionTable.get(i).size;
+      } else {
+        if (myOS.suspended != null && myOS.suspended.baseAddress == partitionTable.get(i).baseAddress) {
+          myOS.suspended.baseAddress = baseAddress;
+          sim.addToLog("  >Compact: Suspended process found (" + myOS.suspended.pid + ") at partition " + baseAddress + ". With id " + myOS.suspended.pid);
         }
+        if (myOS.active != null && myOS.active.baseAddress == partitionTable.get(i).baseAddress) {
+          myOS.active.baseAddress = baseAddress;
+          sim.addToLog("  >Compact: Active process found (" + myOS.active.pid + ") at partition " + baseAddress + ". With id " + myOS.active.pid);
+        }
+        sim.addToLog("Base address is" + baseAddress);
+        partitionTable.get(i).baseAddress = baseAddress;
+        newPartitionTable.add(partitionTable.get(i));
+        sim.addToLog("  >Compact: Moved partition " + partitionTable.get(i).baseAddress + " to " + baseAddress);
+        baseAddress += partitionTable.get(i).size;
       }
-      // If no two elements were
-      // swapped by inner loop, then break
-      if (!swapped) break;
+      myOS.partitionTable.remove(i);
+      f--;
+    }
+    
+    myOS.partitionTable.addAll(newPartitionTable);
+    
+    if (freeSpace > 0) {
+      Partition freePartition = new Partition(baseAddress, freeSpace);
+      partitionTable.add(freePartition);
+      freePartition.isFree = true;
     }
   }
-
-  private void mergePartitions(ArrayList<Partition> partitionTable) {
-    int i = 0;
-    while (i < partitionTable.size() - 1) {
-        Partition currentPartition = partitionTable.get(i);
-        Partition nextPartition = partitionTable.get(i + 1);
-        if (currentPartition.isFree && nextPartition.isFree) {
-            // Merge current and next partitions
-            currentPartition.size += nextPartition.size;
-            partitionTable.remove(i + 1); // Remove the next partition
-        } else {
-            i++; // Move to the next partition only if no merge happened
-        }
+  
+  // private void sort(ArrayList<Partition> partitionTable) {
+  //   int i, j;
+  //   boolean swapped;
+  //   int n = partitionTable.size();
+  //   for (i = 0; i < n - 1; i++) {
+  //     swapped = false;
+  //     int tempBA = partitionTable.get(0).size + partitionTable.get(1).size;
+  //     for (j = 0; j < n - i - 1; j++) {
+  //       if (isSwappable(partitionTable, j)) {
+  //         //Swap
+  //         Collections.swap(partitionTable, j, j + 1);
+  //         findProcess(partitionTable.get(j).baseAddress).baseAddress = tempBA;
+  //         partitionTable.get(j).baseAddress = tempBA;
+  //         tempBA += partitionTable.get(j).size;
+  //         findProcess(partitionTable.get(j + 1).baseAddress).baseAddress = tempBA;
+  //         partitionTable.get(j + 1).baseAddress = tempBA;
+  //         swapped = true;
+  //       }
+  //     }
+  //     //If no two elements were
+  //     //swapped by inner loop, then break
+  //     if (!swapped) break;
+  //   }
+  // }
+  
+  private PCB findProcess(int baseAddress) {
+    for (PCB process : myOS.processTable) {
+      if (process.baseAddress == baseAddress) {
+        return process;
+      }
     }
+    return null;
   }
-
-  private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
-    return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;
-  }
+  
+  // private void mergePartitions(ArrayList<Partition> partitionTable) {
+  //   int i = 0;
+  //   while(i < partitionTable.size() - 1) {
+  //     Partition currentPartition = partitionTable.get(i);
+  //     Partition nextPartition = partitionTable.get(i + 1);
+  //     if (currentPartition.isFree && nextPartition.isFree) {
+  //       //Merge current and next partitions
+  //       currentPartition.size += nextPartition.size;
+  //       partitionTable.remove(i + 1); // Remove the next partition
+  //     } else {
+  //       i++; // Move to the next partition only if no merge happened
+  //     }
+  //   }
+  // }
+  
+  // private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
+  //   return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;
+  // }
 }

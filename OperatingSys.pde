@@ -111,7 +111,7 @@ public class OperatingSystem {
       finishKernelProcess("scheduler");
     } else if (instruction == kernel.get("exitProcess").completeInstruction) {
       sim.contextSwitchTime += 2;
-      sim.addToLog(" >myOS: Finished exiting program " + myOS.active.pid);
+      sim.addToLog(" >myOS: Exiting program " + myOS.active.pid);
       finishKernelProcess("exitProcess");
     } else if (instruction == kernel.get("coalesce").completeInstruction) {
       sim.contextSwitchTime += 2;
@@ -147,7 +147,7 @@ public class OperatingSystem {
     startKernelProcess("idle");
   }
   
-  private void writeToPartition(Partition p, String processImage) {
+  public void writeToPartition(Partition p, String processImage) {
     if (p.size >= processImage.length()) {
       for (int i = 0; i < processImage.length(); i++) {
         writeToRAM(p.baseAddress + i, processImage.charAt(i));
@@ -156,13 +156,14 @@ public class OperatingSystem {
     }
   } 
   
-  private void writeToRAM(int address, char x) {
+  public void writeToRAM(int address, char x) {
     int bank = address / myPC.RAMSizeInBank;
     int position = address % myPC.RAMSizeInBank;
     myPC.RAM[bank][position] = x;
   }
   
   private void emptyPartition(int ba) {
+    sim.addToLog("  >Exit: emptying partition " + ba);
     Partition p = searchPartitionTable(ba);
     for (int i = 0; i < p.size; i++) {
       myOS.writeToRAM(p.baseAddress + i, ' ');

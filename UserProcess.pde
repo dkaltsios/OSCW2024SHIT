@@ -36,7 +36,9 @@ public class UserProcess extends PCB{
     myOS.kernelMode = false;
     this.state = STATE.RUNNING;
     myPC.counter = this.programCounter;
+    sim.addToLog(" >" + this.baseAddress);
     myPC.BA = this.baseAddress;
+    sim.addToLog(" >" + myPC.BA);
     if (startTime == -1) startTime = myPC.clock;
     myPC.interruptsEnabled = ((SchedulerKernel) myOS.kernel.get("scheduler")).isPreEmptive();
   }

@@ -18,6 +18,7 @@ public abstract class KernelProcess extends PCB{
     myPC.counter = 0;
     myPC.BA = this.baseAddress;  
     myOS.active = this;
+    sim.addToLog(" >" + ": starting" + " at BA " + myPC.BA);
   }
   
   public void setIRQ(boolean value) {
@@ -161,7 +162,9 @@ public class ExitProcessKernel extends KernelProcess{
   }
   
   public void finish() {
+    
     myOS.emptyPartition(myOS.deleteProcess.baseAddress);
+    sim.addToLog("  >Exit: emptying partition " + myOS.deleteProcess.baseAddress);
     myOS.processTable.remove(myOS.deleteProcess);
     sim.addToLog("  >Exit: finished exiting process " + myOS.deleteProcess.pid + ". Starting coalesce");
     // Removed to get deleteProcess in coalesce and will be set to null there
