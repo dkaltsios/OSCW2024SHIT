@@ -303,33 +303,31 @@ public class CompactKernel extends KernelProcess{
   
   public void finish() {
     int currentBA = myOS.partitionTable.get(0).baseAddress;
-    ArrayList<Partition> partitionTable = myOs.partitionTable;
 
     // Compact partitions
-    sort(partitionTable);
-    mergePartitions(partitionTable);
+    sort();
+    mergePartitions();
 
 
     // Log the final partition tables once
-    sim.addToLog(newPartitionTable.toString());
     sim.addToLog(myOS.partitionTable.toString());
     myOS.startKernelProcess("scheduler");
   }
 
-private void sort(ArrayList<Partition> partitionTable) {
+private void sort() {
     int i, j;
     Partition temp;
     boolean swapped;
-    int n = partitionTable.size();
+    int n = myOS.partitionTable.size();
     for (i = 0; i < n - 1; i++) {
       swapped = false;
       for (j = 0; j < n - i - 1; j++) {
-        if (isSwappable(partitionTable, j)) {
+        if (isSwappable(myOS.partitionTable, j)) {
             // Swap
-            temp = partitionTable.get(j);
-            partitionTable(j) = partitionTable(j + 1);
-            partitionTable(j + 1) = temp;
+            temp = myOS.partitionTable.get(j);
             swapped = true;
+            myOS.partitionTable.set(j, myOS.partitionTable.get(j + 1));
+            myOS.partitionTable.set(j + 1, temp);
         }
       }
       // If no two elements were
@@ -339,22 +337,22 @@ private void sort(ArrayList<Partition> partitionTable) {
     }
   }
 
-  private void mergePartitions(partitionTable) {
+  private void mergePartitions() {
     int i = 0;
-    int n = partitionTable.size();
+    int n = myOS.partitionTable.size();
     boolean isMerged = false;
     // Iterate until you find the first free partition
     while (i < n && !isMerged) {
       // If the partition is free, merge this with the rest of the partitions
-      Partition firstPartition = partitionTable.get(i);
-      if (firstPartition.isFree()) {
+      Partition firstPartition = myOS.partitionTable.get(i);
+      if (firstPartition.isFree) {
         // Get the sum of all the sizes
         int sum = firstPartition.size;
         for (int j = i + 1; j < n; j++) {
-          currentPartition = partitionTable.get(j);
-          sum += currentPartition.size();
+          Partition currentPartition = myOS.partitionTable.get(j);
+          sum += currentPartition.size;
           // Remove the partition from the partition table
-          partitionTable.remove(j);
+          myOS.partitionTable.remove(j);
         }
         // Make the first partition the sum of all the partitions
         firstPartition.size = sum;
