@@ -368,4 +368,187 @@
 ============== SIMULATION STEP 127 ==============
 >myPC: At time 127 fetched a *
 ============== SIMULATION STEP 128 ==============
->myPC: At time 12
+>myPC: At time 128 executed a *
+============== SIMULATION STEP 129 ==============
+>myPC: At time 129 fetched a *
+============== SIMULATION STEP 130 ==============
+>myPC: At time 130 executed a *
+============== SIMULATION STEP 131 ==============
+>myPC: At time 131 fetched a *
+============== SIMULATION STEP 132 ==============
+>User: Pressed button 2
+>myPC: At time 132 executed a *
+============== SIMULATION STEP 133 ==============
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 133 fetched a *
+============== SIMULATION STEP 134 ==============
+>myPC: At time 134 executed a *
+============== SIMULATION STEP 135 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 135 fetched a *
+============== SIMULATION STEP 136 ==============
+>myPC: At time 136 executed a *
+============== SIMULATION STEP 137 ==============
+>myPC: At time 137 fetched a M
+============== SIMULATION STEP 138 ==============
+>myPC: At time 138 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager : Partition with BA : 176 was found.Starting Process Creator
+============== SIMULATION STEP 139 ==============
+>myPC: At time 139 fetched a C
+============== SIMULATION STEP 140 ==============
+>myPC: At time 140 executed a C
+ >myOS: Finished creating process
+  >Process Creator: process with PID 16 created at partition -1 (BA 176). Starting process admitter
+============== SIMULATION STEP 141 ==============
+>myPC: At time 141 fetched a A
+============== SIMULATION STEP 142 ==============
+>User: Pressed button 2
+>myPC: At time 142 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 16 to the readyQueue. Starting Scheduler
+============== SIMULATION STEP 143 ==============
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 143 fetched a S
+============== SIMULATION STEP 144 ==============
+>myPC: At time 144 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 145 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 145 fetched a *
+============== SIMULATION STEP 146 ==============
+>myPC: At time 146 executed a *
+============== SIMULATION STEP 147 ==============
+>myPC: At time 147 fetched a M
+============== SIMULATION STEP 148 ==============
+>myPC: At time 148 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager : Partition with BA : 200 was found.Starting Process Creator
+============== SIMULATION STEP 149 ==============
+>myPC: At time 149 fetched a C
+============== SIMULATION STEP 150 ==============
+>myPC: At time 150 executed a C
+ >myOS: Finished creating process
+  >Process Creator: process with PID 17 created at partition -1 (BA 200). Starting process admitter
+============== SIMULATION STEP 151 ==============
+>myPC: At time 151 fetched a A
+============== SIMULATION STEP 152 ==============
+>myPC: At time 152 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 17 to the readyQueue. Starting Scheduler
+============== SIMULATION STEP 153 ==============
+>myPC: At time 153 fetched a S
+============== SIMULATION STEP 154 ==============
+>myPC: At time 154 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 155 ==============
+>myPC: At time 155 fetched a *
+============== SIMULATION STEP 156 ==============
+>myPC: At time 156 executed a *
+============== SIMULATION STEP 157 ==============
+>myPC: At time 157 fetched a *
+============== SIMULATION STEP 158 ==============
+>myPC: At time 158 executed a *
+============== SIMULATION STEP 159 ==============
+>myPC: At time 159 fetched a *
+============== SIMULATION STEP 160 ==============
+>myPC: At time 160 executed a *
+============== SIMULATION STEP 161 ==============
+>myPC: At time 161 fetched a *
+============== SIMULATION STEP 162 ==============
+>myPC: At time 162 executed a *
+============== SIMULATION STEP 163 ==============
+>User: Pressed button 3
+>myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
+>myPC: At time 163 fetched a *
+============== SIMULATION STEP 164 ==============
+>myPC: At time 164 executed a *
+============== SIMULATION STEP 165 ==============
+ >MyOS: suspending process 10
+ >MyOS: adding suspended process (10) to ready queue
+>myPC: At time 165 fetched a *
+============== SIMULATION STEP 166 ==============
+>myPC: At time 166 executed a *
+============== SIMULATION STEP 167 ==============
+>myPC: At time 167 fetched a M
+============== SIMULATION STEP 168 ==============
+>myPC: At time 168 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager: No partition was found. Starting Compact Kernel
+============== SIMULATION STEP 169 ==============
+>myPC: At time 169 fetched a P
+============== SIMULATION STEP 170 ==============
+>myPC: At time 170 executed a P
+ >myOS: Compact partitions
+  >Compact: Compacted memory. Starting Process Scheduler
+[MYSOLUTIONS$Partition@44821d2e, MYSOLUTIONS$Partition@125b2536, MYSOLUTIONS$Partition@1e4426f3, MYSOLUTIONS$Partition@1f097842, MYSOLUTIONS$Partition@4bb67de0, MYSOLUTIONS$Partition@8f8335, MYSOLUTIONS$Partition@3fc35e69, MYSOLUTIONS$Partition@6b5ceabb, MYSOLUTIONS$Partition@137dd34d, MYSOLUTIONS$Partition@6f177c3c]
+============== SIMULATION STEP 171 ==============
+>myPC: At time 171 fetched a S
+============== SIMULATION STEP 172 ==============
+>myPC: At time 172 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (10) in the ready queue
+  >Scheduler: selected from the ready queue process 10
+============== SIMULATION STEP 173 ==============
+>myPC: At time 173 fetched a d
+============== SIMULATION STEP 174 ==============
+>myPC: At time 174 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 175 ==============
+>myPC: At time 175 fetched a d
+============== SIMULATION STEP 176 ==============
+>myPC: At time 176 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 177 ==============
+>myPC: At time 177 fetched a d
+============== SIMULATION STEP 178 ==============
+>myPC: At time 178 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 179 ==============
+>myPC: At time 179 fetched a d
+============== SIMULATION STEP 180 ==============
+>myPC: At time 180 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 181 ==============
+>myPC: At time 181 fetched a d
+============== SIMULATION STEP 182 ==============
+>myPC: At time 182 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 183 ==============
+>myPC: At time 183 fetched a d
+============== SIMULATION STEP 184 ==============
+>myPC: At time 184 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 185 ==============
+>myPC: At time 185 fetched a d
+============== SIMULATION STEP 186 ==============
+>myPC: At time 186 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 187 ==============
+>myPC: At time 187 fetched a d
+============== SIMULATION STEP 188 ==============
+>myPC: At time 188 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 189 ==============
+>myPC: At time 189 fetched a d
+============== SIMULATION STEP 190 ==============
+>myPC: At time 190 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 191 ==============
+>myPC: At time 191 fetched a d
+============== SIMULATION STEP 192 ==============
+>myPC: At time 192 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 193 ==============
+>myPC: At time 193 fetched a d
+============== SIMULATION STEP 194 ==============
+>myPC: At time 194 executed a d
+ >myOS: ERROR 101 Undefined instruction
+============== SIMULATION STEP 195 ==============
+>myPC: At time 195
