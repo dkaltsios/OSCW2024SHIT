@@ -58,7 +58,6 @@ public class PriorityQueueScheduler extends ShortTermScheduler{
 // First Come First Serve Scheduler
 // Pick the first process in the ready queue
 public class FCFScheduler extends ShortTermScheduler{
-    
     FCFScheduler() {
         super();
         //NONPREMPTIVE HAS ERRORIN SIMULATOR
@@ -305,87 +304,58 @@ public class CompactKernel extends KernelProcess{
   
   public void finish() {
     ArrayList<Partition> partitionTable = myOS.partitionTable;
-    ArrayList<Partition> shortedPartitions = new ArrayList<Partition>();
+    //ArrayList<Partition> partitionsToRemove = new ArrayList<>();
+    int freeSpace = 0;
 
-    // Compact partitions
-    sort(partitionTable, shortedPartitions);
-    for (int i = 0; i < shortedPartitions.size(); i++) {
-      sim.addToLog("  >Compact: Shorted partition with BA: " + shortedPartitions.get(i).baseAddress + " and size: " + shortedPartitions.get(i).size);
-    }
-    mergePartitions(partitionTable);
-    //shiftBaseAddresses(partitionTable, shortedPartitions);
+    // Skip the OS partition
+    for (int i = 1; i < partitionTable.size(); i++) {
+      Partition partition = partitionTable.get(i);
 
-    // Log the final partition tables once
-    sim.addToLog(myOS.partitionTable.toString());
-    myOS.startKernelProcess("scheduler");
-  }
-
-
-private void sort(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
-  int i, j;
-  boolean swapped;
-  int n = partitionTable.size();
-  for (i = 0; i < n - 1; i++) {
-    swapped = false;
-    for (j = 0; j < n - i - 1; j++) {
-      if (isSwappable(partitionTable, j)) {
-          // Swap
-          //Collections.swap(partitionTable, j, j + 1);
-          Partition temp = partitionTable.get(j);
-          partitionTable.set(j, partitionTable.get(j + 1));
-          partitionTable.set(j + 1, temp);
-          swapped = true; 
-          // Add the partition to the shorted list
-          if (!shortedPartitions.contains(partitionTable.get(j+1))) {
-              shortedPartitions.add(partitionTable.get(j+1));
-          }
-          
-          int tempB = partitionTable.get(j).baseAddress;
-          partitionTable.get(j).baseAddress = partitionTable.get(j+1).baseAddress;
-          partitionTable.get(j+1).baseAddress = tempB;
-      }
-    }
-    // If no two elements were
-    // swapped by inner loop, then break
-    if (!swapped) break;
-  }
-}
-
-private void mergePartitions(ArrayList<Partition> partitionTable) {
-  int i = 0;
-  while (i < partitionTable.size() - 1) {
-      Partition currentPartition = partitionTable.get(i);
-      Partition nextPartition = partitionTable.get(i + 1);
-      if (currentPartition.isFree && nextPartition.isFree) {
-          // Merge current and next partitions
-          currentPartition.size += nextPartition.size;
-          partitionTable.remove(i + 1); // Remove the next partition
+      if (!partition.isFree) {
+        // Move the content of the partition to the new base address
+        for (int j = 0; j < partition.size; j++) {
+          int oldAddress = partition.baseAddress + j;
+          int newAddress = partition.baseAddress - freeSpace + j;
+          char content = myPC.RAM[oldAddress / myPC.RAMSizeInBank][oldAddress % myPC.RAMSizeInBank];
+          myPC.RAM[newAddress / myPC.RAMSizeInBank][newAddress % myPC.RAMSizeInBank] = content;
+          sim.addToLog("  >Compact: Moved content " + content + " from " + oldAddress + " to " + newAddress);
+        }
+        // Update the base address of the partition
+        partition.baseAddress -= freeSpace;
       } else {
-          i++; // Move to the next partition only if no merge happened
+        // Add the free space to the total
+        freeSpace += partition.size;
+        // partitionsToRemove.add(partition);
+        partitionTable.remove(partition);
+        // Relocate the index to the next partition
+        i--;
       }
-  }
-}
+    }
 
-// private void shiftBaseAddresses(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
-//   // Get the shift amount
-//   int shiftAmount = 0;
-//   for (int i = 0; i < shortedPartitions.size(); i++) {
-//     Partition partition = shortedPartitions.get(i);
-//     shiftAmount += partition.size;
-//   }
-//   sim.addToLog("  >Compact: Shift amount: " + shiftAmount);
+    // Remove the free partitions
+    // for (Partition partition : partitionsToRemove) {
+    //   partitionTable.remove(partition);
+    // }
+    
+    // Create a new partition with the free space
+    if (freeSpace > 0) {
+      int lastPartitionIndex = partitionTable.size() - 1;
+      int lastPartitionBA = partitionTable.get(lastPartitionIndex).baseAddress;
+      int lastPartitionSize = partitionTable.get(lastPartitionIndex).size;
+      int newPartitionAddress = lastPartitionBA + lastPartitionSize;
+      Partition newPartition = new Partition(newPartitionAddress, freeSpace);
+      partitionTable.add(newPartition);  
+    }
+    sim.addToLog("  >Compact: Compacted memory. Starting Process Scheduler");
 
-//   // Shift the base addresses
-//   // Ignore the OS partition
-//   for (int i = 1; i < partitionTable.size(); i++) {
-//     Partition partition = partitionTable.get(i);
-//     if (!partition.isFree) {
-//       partition.baseAddress -= shiftAmount;
-//     }
-//   }
-// }
+    // // Log the final partition tables once
+    // for (Partition partition : myOS.partitionTable) {
+    //   sim.addToLog("Partition: baseAddress=" + partition.baseAddress + ", size=" + partition.size + ", isFree=" + partition.isFree);
+    // }
+    sim.addToLog(myOS.partitionTable.toString());
 
-  private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
-    return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;
+    //myOS.startKernelProcess("scheduler");
+    myOS.raiseIRQ("scheduler");
+    this.state = STATE.READY;
   }
 }
