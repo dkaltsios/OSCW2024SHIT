@@ -1,4 +1,4 @@
-import java.util.Collections;
+  import java.util.Collections;
 
 // * Schedulers
 // Shortest Job First Scheduler
@@ -322,6 +322,7 @@ public class CompactKernel extends KernelProcess{
 
 
 private void sort(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
+  ArrayList<PCB> processes = myOS.processTable;
   int i, j;
   boolean swapped;
   int n = partitionTable.size();
@@ -330,19 +331,18 @@ private void sort(ArrayList<Partition> partitionTable, ArrayList<Partition> shor
     for (j = 0; j < n - i - 1; j++) {
       if (isSwappable(partitionTable, j)) {
           // Swap
-          //Collections.swap(partitionTable, j, j + 1);
-          Partition temp = partitionTable.get(j);
-          partitionTable.set(j, partitionTable.get(j + 1));
-          partitionTable.set(j + 1, temp);
+          Collections.swap(partitionTable, j, j + 1);
           swapped = true; 
           // Add the partition to the shorted list
           if (!shortedPartitions.contains(partitionTable.get(j+1))) {
               shortedPartitions.add(partitionTable.get(j+1));
           }
-          
-          int tempB = partitionTable.get(j).baseAddress;
-          partitionTable.get(j).baseAddress = partitionTable.get(j+1).baseAddress;
-          partitionTable.get(j+1).baseAddress = tempB;
+          int temp = partitionTable.get(j+1).baseAddress;
+          partitionTable.get(j+1).baseAddress = partitionTable.get(j).baseAddress;
+          partitionTable.get(j).baseAddress = temp;
+          int tempP = processes.get(j+1).baseAddress;
+          processes.get(j+1).baseAddress = processes.get(j).baseAddress;
+          processes.get(j).baseAddress = tempP;
       }
     }
     // If no two elements were
@@ -366,24 +366,26 @@ private void mergePartitions(ArrayList<Partition> partitionTable) {
   }
 }
 
-// private void shiftBaseAddresses(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
-//   // Get the shift amount
-//   int shiftAmount = 0;
-//   for (int i = 0; i < shortedPartitions.size(); i++) {
-//     Partition partition = shortedPartitions.get(i);
-//     shiftAmount += partition.size;
-//   }
-//   sim.addToLog("  >Compact: Shift amount: " + shiftAmount);
+/*
+  private void shiftBaseAddresses(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
+    // Get the shift amount
+    int shiftAmount = 0;
+    for (int i = 0; i < shortedPartitions.size(); i++) {
+      Partition partition = shortedPartitions.get(i);
+      shiftAmount += partition.size;
+    }
+    sim.addToLog("  >Compact: Shift amount: " + shiftAmount);
 
-//   // Shift the base addresses
-//   // Ignore the OS partition
-//   for (int i = 1; i < partitionTable.size(); i++) {
-//     Partition partition = partitionTable.get(i);
-//     if (!partition.isFree) {
-//       partition.baseAddress -= shiftAmount;
-//     }
-//   }
-// }
+    // Shift the base addresses
+    // Ignore the OS partition
+    for (int i = 1; i < partitionTable.size(); i++) {
+      Partition partition = partitionTable.get(i);
+      if (!partition.isFree) {
+        partition.baseAddress -= shiftAmount;
+      }
+    }
+  }
+  */
 
   private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
     return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;

@@ -782,6 +782,7 @@ public class CompactKernel extends KernelProcess{
     myOS.startKernelProcess("scheduler");
   }
 
+
 private void sort(ArrayList<Partition> partitionTable) {
     int i, j;
     boolean swapped;
@@ -800,6 +801,28 @@ private void sort(ArrayList<Partition> partitionTable) {
       if (!swapped) break;
     }
   }
+  
+  /*
+  private void sort(ArrayList<Partition> partitionTable) {
+    int n = partitionTable.size();
+    for (int i = 0; i < n - 1; i++) {
+      // Assume the current position holds
+      // the minimum element
+      int min_idx = i;
+
+      // Iterate through the unsorted portion
+      // to find the actual minimum
+      for (int j = i + 1; j < n; j++) {
+        if (isSwappable(partitionTable, j)) {
+            // Update min_idx if a smaller element
+            // is found
+            min_idx = j;
+        }
+      }
+      // Move minimum element to its correct position
+      Collections.swap(partitionTable, i, min_idx);        
+    }
+  }*/
 
   private void mergePartitions(ArrayList<Partition> partitionTable) {
     int i = 0;
@@ -810,6 +833,7 @@ private void sort(ArrayList<Partition> partitionTable) {
             // Merge current and next partitions
             currentPartition.size += nextPartition.size;
             partitionTable.remove(i + 1); // Remove the next partition
+            partitionsMerged++;
         } else {
             i++; // Move to the next partition only if no merge happened
         }

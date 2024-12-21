@@ -1,4 +1,4 @@
-import java.util.Collections;
+  import java.util.Collections;
 
 // * Schedulers
 // Shortest Job First Scheduler
@@ -339,10 +339,9 @@ private void sort(ArrayList<Partition> partitionTable, ArrayList<Partition> shor
           if (!shortedPartitions.contains(partitionTable.get(j+1))) {
               shortedPartitions.add(partitionTable.get(j+1));
           }
-          
-          int tempB = partitionTable.get(j).baseAddress;
-          partitionTable.get(j).baseAddress = partitionTable.get(j+1).baseAddress;
-          partitionTable.get(j+1).baseAddress = tempB;
+          //int tempB = partitionTable.get(j+1).baseAddress;
+          //partitionTable.get(j+1).baseAddress = partitionTable.get(j).baseAddress;
+          //partitionTable.get(j).baseAddress = tempB;
       }
     }
     // If no two elements were
@@ -366,24 +365,26 @@ private void mergePartitions(ArrayList<Partition> partitionTable) {
   }
 }
 
-// private void shiftBaseAddresses(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
-//   // Get the shift amount
-//   int shiftAmount = 0;
-//   for (int i = 0; i < shortedPartitions.size(); i++) {
-//     Partition partition = shortedPartitions.get(i);
-//     shiftAmount += partition.size;
-//   }
-//   sim.addToLog("  >Compact: Shift amount: " + shiftAmount);
+/*
+  private void shiftBaseAddresses(ArrayList<Partition> partitionTable, ArrayList<Partition> shortedPartitions) {
+    // Get the shift amount
+    int shiftAmount = 0;
+    for (int i = 0; i < shortedPartitions.size(); i++) {
+      Partition partition = shortedPartitions.get(i);
+      shiftAmount += partition.size;
+    }
+    sim.addToLog("  >Compact: Shift amount: " + shiftAmount);
 
-//   // Shift the base addresses
-//   // Ignore the OS partition
-//   for (int i = 1; i < partitionTable.size(); i++) {
-//     Partition partition = partitionTable.get(i);
-//     if (!partition.isFree) {
-//       partition.baseAddress -= shiftAmount;
-//     }
-//   }
-// }
+    // Shift the base addresses
+    // Ignore the OS partition
+    for (int i = 1; i < partitionTable.size(); i++) {
+      Partition partition = partitionTable.get(i);
+      if (!partition.isFree) {
+        partition.baseAddress -= shiftAmount;
+      }
+    }
+  }
+  */
 
   private boolean isSwappable(ArrayList<Partition> partitionTable, int index) {
     return partitionTable.get(index).isFree && !partitionTable.get(index + 1).isFree;
