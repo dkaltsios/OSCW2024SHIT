@@ -303,59 +303,51 @@ public class CompactKernel extends KernelProcess{
   }
   
   public void finish() {
-    ArrayList<Partition> partitionTable = myOS.partitionTable;
-    //ArrayList<Partition> partitionsToRemove = new ArrayList<>();
+    ArrayList<Partition> partitionsToRemove = new ArrayList<>();
     int freeSpace = 0;
 
     // Skip the OS partition
-    for (int i = 1; i < partitionTable.size(); i++) {
-      Partition partition = partitionTable.get(i);
+    for (int i = 1; i < myOS.partitionTable.size(); i++) {
+      Partition partition = myOS.partitionTable.get(i);
 
       if (!partition.isFree) {
         // Move the content of the partition to the new base address
-        for (int j = 0; j < partition.size; j++) {
-          int oldAddress = partition.baseAddress + j;
-          int newAddress = partition.baseAddress - freeSpace + j;
-          char content = myPC.RAM[oldAddress / myPC.RAMSizeInBank][oldAddress % myPC.RAMSizeInBank];
-          myPC.RAM[newAddress / myPC.RAMSizeInBank][newAddress % myPC.RAMSizeInBank] = content;
-          sim.addToLog("  >Compact: Moved content " + content + " from " + oldAddress + " to " + newAddress);
+        if (freeSpace > 0) {
+          for (int j = 0; j < partition.size; j++) {
+            int oldAddress = partition.baseAddress + j;
+            int newAddress = partition.baseAddress - freeSpace + j;
+            char content = myPC.RAM[oldAddress / myPC.RAMSizeInBank][oldAddress % myPC.RAMSizeInBank];
+            myPC.RAM[newAddress / myPC.RAMSizeInBank][newAddress % myPC.RAMSizeInBank] = content;
+          }
+          // Update the base address of the partition
+          partition.baseAddress -= freeSpace;
         }
-        // Update the base address of the partition
-        partition.baseAddress -= freeSpace;
       } else {
         // Add the free space to the total
         freeSpace += partition.size;
         // partitionsToRemove.add(partition);
-        partitionTable.remove(partition);
+        myOS.partitionTable.remove(partition);
         // Relocate the index to the next partition
         i--;
       }
     }
 
-    // Remove the free partitions
-    // for (Partition partition : partitionsToRemove) {
-    //   partitionTable.remove(partition);
-    // }
+    //Remove the free partitions
+    myOS.partitionTable.removeAll(partitionsToRemove);
     
     // Create a new partition with the free space
     if (freeSpace > 0) {
-      int lastPartitionIndex = partitionTable.size() - 1;
-      int lastPartitionBA = partitionTable.get(lastPartitionIndex).baseAddress;
-      int lastPartitionSize = partitionTable.get(lastPartitionIndex).size;
+      int lastPartitionIndex = myOS.partitionTable.size() - 1;
+      int lastPartitionBA = myOS.partitionTable.get(lastPartitionIndex).baseAddress;
+      int lastPartitionSize = myOS.partitionTable.get(lastPartitionIndex).size;
       int newPartitionAddress = lastPartitionBA + lastPartitionSize;
       Partition newPartition = new Partition(newPartitionAddress, freeSpace);
-      partitionTable.add(newPartition);  
+      myOS.partitionTable.add(newPartition);  
     }
     sim.addToLog("  >Compact: Compacted memory. Starting Process Scheduler");
-
-    // // Log the final partition tables once
-    // for (Partition partition : myOS.partitionTable) {
-    //   sim.addToLog("Partition: baseAddress=" + partition.baseAddress + ", size=" + partition.size + ", isFree=" + partition.isFree);
-    // }
     sim.addToLog(myOS.partitionTable.toString());
 
-    //myOS.startKernelProcess("scheduler");
-    myOS.raiseIRQ("scheduler");
+    myOS.startKernelProcess("scheduler");
     this.state = STATE.READY;
   }
 }
