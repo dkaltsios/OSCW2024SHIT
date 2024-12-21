@@ -501,7 +501,7 @@ i: 9 isFree: true
 i: 10 isFree: true
 ---------------------------------
 ---------------------------------
-Merged: [MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@3f60fa75, MYSOLUTIONS$Partition@16ec0944, MYSOLUTIONS$Partition@32d2a497, MYSOLUTIONS$Partition@4cc96420, MYSOLUTIONS$Partition@74428c9e, MYSOLUTIONS$Partition@2920d7b, MYSOLUTIONS$Partition@2543e7a2, MYSOLUTIONS$Partition@22ac6f4e, MYSOLUTIONS$Partition@42ea31f9, MYSOLUTIONS$Partition@5081150a]
+Merged: [OSCW2024$Partition@7d650163, OSCW2024$Partition@50246a2d, OSCW2024$Partition@501f8cde, OSCW2024$Partition@2ea5d2a6, OSCW2024$Partition@7b9eb008, OSCW2024$Partition@898d854, OSCW2024$Partition@24cdcce5, OSCW2024$Partition@247d0a38, OSCW2024$Partition@2a6de04f, OSCW2024$Partition@6479c72e, OSCW2024$Partition@2e1985a0]
 i: 0 isFree: false size: 9
 i: 1 isFree: false size: 34
 i: 2 isFree: false size: 34
@@ -513,7 +513,7 @@ i: 7 isFree: false size: 24
 i: 8 isFree: false size: 24
 i: 9 isFree: true size: 23
 ---------------------------------
-[MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@3f60fa75, MYSOLUTIONS$Partition@16ec0944, MYSOLUTIONS$Partition@32d2a497, MYSOLUTIONS$Partition@4cc96420, MYSOLUTIONS$Partition@74428c9e, MYSOLUTIONS$Partition@2920d7b, MYSOLUTIONS$Partition@2543e7a2, MYSOLUTIONS$Partition@22ac6f4e, MYSOLUTIONS$Partition@42ea31f9]
+[OSCW2024$Partition@7d650163, OSCW2024$Partition@50246a2d, OSCW2024$Partition@501f8cde, OSCW2024$Partition@2ea5d2a6, OSCW2024$Partition@7b9eb008, OSCW2024$Partition@898d854, OSCW2024$Partition@24cdcce5, OSCW2024$Partition@247d0a38, OSCW2024$Partition@2a6de04f, OSCW2024$Partition@6479c72e]
 ============== SIMULATION STEP 171 ==============
 >myPC: At time 171 fetched a S
 ============== SIMULATION STEP 172 ==============
@@ -1010,137 +1010,104 @@ i: 9 isFree: true size: 23
 ============== SIMULATION STEP 384 ==============
 >myPC: At time 384 executed a I
  >myOS: System is idle. Waiting for user input
->User: Pressed button 1
 ============== SIMULATION STEP 385 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 385 fetched a I
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
 ============== SIMULATION STEP 386 ==============
 >myPC: At time 386 executed a I
  >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 387 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 387 fetched a *
+>myPC: At time 387 fetched a I
 ============== SIMULATION STEP 388 ==============
->myPC: At time 388 executed a *
+>myPC: At time 388 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 389 ==============
->myPC: At time 389 fetched a M
+>myPC: At time 389 fetched a I
 ============== SIMULATION STEP 390 ==============
->myPC: At time 390 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
+>myPC: At time 390 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 391 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 391 fetched a C
+>myPC: At time 391 fetched a I
 ============== SIMULATION STEP 392 ==============
->myPC: At time 392 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 18 created at partition -1 (BA 9). Starting process admitter
+>myPC: At time 392 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 393 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 393 fetched a A
+>myPC: At time 393 fetched a I
 ============== SIMULATION STEP 394 ==============
->myPC: At time 394 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 18 to the readyQueue. Starting Scheduler
+>myPC: At time 394 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 395 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 395 fetched a *
+>myPC: At time 395 fetched a I
 ============== SIMULATION STEP 396 ==============
->myPC: At time 396 executed a *
+>myPC: At time 396 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 397 ==============
->myPC: At time 397 fetched a M
+>myPC: At time 397 fetched a I
 ============== SIMULATION STEP 398 ==============
->myPC: At time 398 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 26 was found.Starting Process Creator
->User: Pressed button 1
+>myPC: At time 398 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 399 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 399 fetched a C
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
+>myPC: At time 399 fetched a I
 ============== SIMULATION STEP 400 ==============
->myPC: At time 400 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 19 created at partition -1 (BA 26). Starting process admitter
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
->User: Pressed button 1
+>myPC: At time 400 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 401 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 401 fetched a A
+>myPC: At time 401 fetched a I
 ============== SIMULATION STEP 402 ==============
->myPC: At time 402 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 19 to the readyQueue. Starting Scheduler
+>myPC: At time 402 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 403 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 403 fetched a *
+>myPC: At time 403 fetched a I
 ============== SIMULATION STEP 404 ==============
->myPC: At time 404 executed a *
+>myPC: At time 404 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 405 ==============
->myPC: At time 405 fetched a M
+>myPC: At time 405 fetched a I
 ============== SIMULATION STEP 406 ==============
->myPC: At time 406 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 43 was found.Starting Process Creator
+>myPC: At time 406 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 407 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 407 fetched a C
+>myPC: At time 407 fetched a I
+>User: Pressed button 3
 ============== SIMULATION STEP 408 ==============
->myPC: At time 408 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 20 created at partition -1 (BA 43). Starting process admitter
+>myPC: At time 408 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 409 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 409 fetched a A
+>myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
+>myPC: At time 409 fetched a I
+>User: Pressed button 2
 ============== SIMULATION STEP 410 ==============
->myPC: At time 410 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 20 to the readyQueue. Starting Scheduler
+>myPC: At time 410 executed a I
+ >myOS: System is idle. Waiting for user input
 ============== SIMULATION STEP 411 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
 >myPC: At time 411 fetched a *
+>User: Pressed button 2
 ============== SIMULATION STEP 412 ==============
 >myPC: At time 412 executed a *
+>User: Pressed button 2
 ============== SIMULATION STEP 413 ==============
 >myPC: At time 413 fetched a M
+>User: Pressed button 1
 ============== SIMULATION STEP 414 ==============
 >myPC: At time 414 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 60 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
+>User: Pressed button 1
 ============== SIMULATION STEP 415 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
 >myPC: At time 415 fetched a C
+>User: Pressed button 1
 ============== SIMULATION STEP 416 ==============
 >myPC: At time 416 executed a C
  >myOS: Finished creating process
-  >Process Creator: process with PID 21 created at partition -1 (BA 60). Starting process admitter
+  >Process Creator: process with PID 18 created at partition -1 (BA 9). Starting process admitter
 ============== SIMULATION STEP 417 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
 >myPC: At time 417 fetched a A
 ============== SIMULATION STEP 418 ==============
 >myPC: At time 418 executed a A
  >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 21 to the readyQueue. Starting Scheduler
+  >Process Admitter: Admitted process 18 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 419 ==============
 >myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 419 fetched a *
@@ -1151,23 +1118,22 @@ i: 9 isFree: true size: 23
 ============== SIMULATION STEP 422 ==============
 >myPC: At time 422 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 77 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 33 was found.Starting Process Creator
 ============== SIMULATION STEP 423 ==============
 >myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 423 fetched a C
 ============== SIMULATION STEP 424 ==============
 >myPC: At time 424 executed a C
  >myOS: Finished creating process
-  >Process Creator: process with PID 22 created at partition -1 (BA 77). Starting process admitter
+  >Process Creator: process with PID 19 created at partition -1 (BA 33). Starting process admitter
 ============== SIMULATION STEP 425 ==============
 >myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 425 fetched a A
 ============== SIMULATION STEP 426 ==============
 >myPC: At time 426 executed a A
  >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 22 to the readyQueue. Starting Scheduler
+  >Process Admitter: Admitted process 19 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 427 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 427 fetched a *
 ============== SIMULATION STEP 428 ==============
 >myPC: At time 428 executed a *
@@ -1176,450 +1142,182 @@ i: 9 isFree: true size: 23
 ============== SIMULATION STEP 430 ==============
 >myPC: At time 430 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 94 was found.Starting Process Creator
+  >Memory Manager : Partition with BA : 50 was found.Starting Process Creator
 ============== SIMULATION STEP 431 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 431 fetched a C
 ============== SIMULATION STEP 432 ==============
 >myPC: At time 432 executed a C
  >myOS: Finished creating process
-  >Process Creator: process with PID 23 created at partition -1 (BA 94). Starting process admitter
+  >Process Creator: process with PID 20 created at partition -1 (BA 50). Starting process admitter
 ============== SIMULATION STEP 433 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 433 fetched a A
 ============== SIMULATION STEP 434 ==============
 >myPC: At time 434 executed a A
  >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 23 to the readyQueue. Starting Scheduler
+  >Process Admitter: Admitted process 20 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 435 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 435 fetched a *
+>myPC: At time 435 fetched a S
 ============== SIMULATION STEP 436 ==============
->myPC: At time 436 executed a *
+>myPC: At time 436 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 18
 ============== SIMULATION STEP 437 ==============
->myPC: At time 437 fetched a M
+>myPC: At time 437 fetched a *
 ============== SIMULATION STEP 438 ==============
->myPC: At time 438 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 111 was found.Starting Process Creator
+>myPC: At time 438 executed a *
 ============== SIMULATION STEP 439 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 439 fetched a C
+>myPC: At time 439 fetched a *
 ============== SIMULATION STEP 440 ==============
->myPC: At time 440 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 24 created at partition -1 (BA 111). Starting process admitter
+>myPC: At time 440 executed a *
 ============== SIMULATION STEP 441 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 441 fetched a A
+>myPC: At time 441 fetched a *
 ============== SIMULATION STEP 442 ==============
->myPC: At time 442 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 24 to the readyQueue. Starting Scheduler
+>myPC: At time 442 executed a *
 ============== SIMULATION STEP 443 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
 >myPC: At time 443 fetched a *
 ============== SIMULATION STEP 444 ==============
 >myPC: At time 444 executed a *
 ============== SIMULATION STEP 445 ==============
->myPC: At time 445 fetched a M
+>myPC: At time 445 fetched a *
 ============== SIMULATION STEP 446 ==============
->myPC: At time 446 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 128 was found.Starting Process Creator
+>myPC: At time 446 executed a *
 ============== SIMULATION STEP 447 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 447 fetched a C
+>myPC: At time 447 fetched a *
 ============== SIMULATION STEP 448 ==============
->myPC: At time 448 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 25 created at partition -1 (BA 128). Starting process admitter
+>myPC: At time 448 executed a *
 ============== SIMULATION STEP 449 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 449 fetched a A
+>myPC: At time 449 fetched a *
 ============== SIMULATION STEP 450 ==============
->myPC: At time 450 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 25 to the readyQueue. Starting Scheduler
+>myPC: At time 450 executed a *
 ============== SIMULATION STEP 451 ==============
 >myPC: At time 451 fetched a *
 ============== SIMULATION STEP 452 ==============
 >myPC: At time 452 executed a *
->User: Pressed button 1
 ============== SIMULATION STEP 453 ==============
->myPC: At time 453 fetched a M
+>myPC: At time 453 fetched a *
 ============== SIMULATION STEP 454 ==============
->myPC: At time 454 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 145 was found.Starting Process Creator
->User: Pressed button 1
+>myPC: At time 454 executed a *
 ============== SIMULATION STEP 455 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 455 fetched a C
->User: Pressed button 1
+>myPC: At time 455 fetched a $
 ============== SIMULATION STEP 456 ==============
->myPC: At time 456 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 26 created at partition -1 (BA 145). Starting process admitter
->User: Pressed button 1
+>myPC: At time 456 executed a $
+ >myOS: Exiting the running process
 ============== SIMULATION STEP 457 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 457 fetched a A
+>myPC: At time 457 fetched a X
 ============== SIMULATION STEP 458 ==============
->myPC: At time 458 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 26 to the readyQueue. Starting Scheduler
->User: Pressed button 1
+>myPC: At time 458 executed a X
+ >myOS: Finished exiting program 5
+  >Exit: finished exiting process 18. Starting coalesce
 ============== SIMULATION STEP 459 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 459 fetched a *
+>myPC: At time 459 fetched a N
 ============== SIMULATION STEP 460 ==============
->myPC: At time 460 executed a *
+>myPC: At time 460 executed a N
+ >myOS: Coalesce partition 9
+  >Coalesce : No adjacent free partitions to merge.
+  >Coalesce: Finished coalescing partition 9.Starting Process Scheduler
+>User: Pressed button 2
 ============== SIMULATION STEP 461 ==============
->myPC: At time 461 fetched a M
+>myPC: At time 461 fetched a S
+>User: Pressed button 2
 ============== SIMULATION STEP 462 ==============
->myPC: At time 462 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 162 was found.Starting Process Creator
+>myPC: At time 462 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: selected from the ready queue process 19
 ============== SIMULATION STEP 463 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 463 fetched a C
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 463 fetched a *
 ============== SIMULATION STEP 464 ==============
->myPC: At time 464 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 27 created at partition -1 (BA 162). Starting process admitter
->User: Pressed button 1
+>myPC: At time 464 executed a *
 ============== SIMULATION STEP 465 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 465 fetched a A
+ >MyOS: suspending process 19
+ >MyOS: adding suspended process (19) to ready queue
+>myPC: Keyboard interrupt handled. Request for program2.exe. Staring Memory Manager
+>myPC: At time 465 fetched a *
 ============== SIMULATION STEP 466 ==============
->myPC: At time 466 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 27 to the readyQueue. Starting Scheduler
->User: Pressed button 1
+>myPC: At time 466 executed a *
 ============== SIMULATION STEP 467 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 467 fetched a *
+>myPC: At time 467 fetched a M
 ============== SIMULATION STEP 468 ==============
->myPC: At time 468 executed a *
-============== SIMULATION STEP 469 ==============
->myPC: At time 469 fetched a M
->User: Pressed button 1
-============== SIMULATION STEP 470 ==============
->myPC: At time 470 executed a M
+>myPC: At time 468 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 179 was found.Starting Process Creator
-============== SIMULATION STEP 471 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 471 fetched a C
-============== SIMULATION STEP 472 ==============
->myPC: At time 472 executed a C
+  >Memory Manager : Partition with BA : 9 was found.Starting Process Creator
+>User: Pressed button 3
+============== SIMULATION STEP 469 ==============
+>myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
+>myPC: At time 469 fetched a C
+============== SIMULATION STEP 470 ==============
+>myPC: At time 470 executed a C
  >myOS: Finished creating process
-  >Process Creator: process with PID 28 created at partition -1 (BA 179). Starting process admitter
+  >Process Creator: process with PID 21 created at partition 1 (BA 9). Starting process admitter
+============== SIMULATION STEP 471 ==============
+>myPC: At time 471 fetched a A
+============== SIMULATION STEP 472 ==============
+>myPC: At time 472 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 21 to the readyQueue. Starting Scheduler
 >User: Pressed button 1
 ============== SIMULATION STEP 473 ==============
 >myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 473 fetched a A
+>myPC: At time 473 fetched a *
 ============== SIMULATION STEP 474 ==============
->myPC: At time 474 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 28 to the readyQueue. Starting Scheduler
+>myPC: At time 474 executed a *
 ============== SIMULATION STEP 475 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 475 fetched a *
+>myPC: At time 475 fetched a M
 ============== SIMULATION STEP 476 ==============
->myPC: At time 476 executed a *
->User: Pressed button 1
+>myPC: At time 476 executed a M
+ >myOS: Finished running memory manager
+  >Memory Manager : Partition with BA : 67 was found.Starting Process Creator
 ============== SIMULATION STEP 477 ==============
->myPC: At time 477 fetched a M
+>myPC: At time 477 fetched a C
 ============== SIMULATION STEP 478 ==============
->myPC: At time 478 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 196 was found.Starting Process Creator
+>myPC: At time 478 executed a C
+ >myOS: Finished creating process
+  >Process Creator: process with PID 22 created at partition -1 (BA 67). Starting process admitter
 ============== SIMULATION STEP 479 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 479 fetched a C
+>myPC: At time 479 fetched a A
 ============== SIMULATION STEP 480 ==============
->myPC: At time 480 executed a C
- >myOS: Finished creating process
-  >Process Creator: process with PID 29 created at partition -1 (BA 196). Starting process admitter
->User: Pressed button 1
+>myPC: At time 480 executed a A
+ >myOS: Finished admitting process to the ready queue
+  >Process Admitter: Admitted process 22 to the readyQueue. Starting Scheduler
 ============== SIMULATION STEP 481 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 481 fetched a A
+>myPC: At time 481 fetched a *
 ============== SIMULATION STEP 482 ==============
->myPC: At time 482 executed a A
- >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 29 to the readyQueue. Starting Scheduler
+>myPC: At time 482 executed a *
 ============== SIMULATION STEP 483 ==============
->myPC: At time 483 fetched a *
+>myPC: At time 483 fetched a M
 ============== SIMULATION STEP 484 ==============
->myPC: At time 484 executed a *
->User: Pressed button 1
-============== SIMULATION STEP 485 ==============
->myPC: At time 485 fetched a M
-============== SIMULATION STEP 486 ==============
->myPC: At time 486 executed a M
+>myPC: At time 484 executed a M
  >myOS: Finished running memory manager
-  >Memory Manager : Partition with BA : 213 was found.Starting Process Creator
-============== SIMULATION STEP 487 ==============
->myPC: Keyboard interrupt handled. Request for program1.exe. Staring Memory Manager
->myPC: At time 487 fetched a C
-============== SIMULATION STEP 488 ==============
->myPC: At time 488 executed a C
+  >Memory Manager : Partition with BA : 84 was found.Starting Process Creator
+============== SIMULATION STEP 485 ==============
+>myPC: At time 485 fetched a C
+============== SIMULATION STEP 486 ==============
+>myPC: At time 486 executed a C
  >myOS: Finished creating process
-  >Process Creator: process with PID 30 created at partition -1 (BA 213). Starting process admitter
-============== SIMULATION STEP 489 ==============
->myPC: At time 489 fetched a A
-============== SIMULATION STEP 490 ==============
->myPC: At time 490 executed a A
+  >Process Creator: process with PID 23 created at partition -1 (BA 84). Starting process admitter
+============== SIMULATION STEP 487 ==============
+>myPC: At time 487 fetched a A
+============== SIMULATION STEP 488 ==============
+>myPC: At time 488 executed a A
  >myOS: Finished admitting process to the ready queue
-  >Process Admitter: Admitted process 30 to the readyQueue. Starting Scheduler
+  >Process Admitter: Admitted process 23 to the readyQueue. Starting Scheduler
+============== SIMULATION STEP 489 ==============
+>myPC: At time 489 fetched a S
+============== SIMULATION STEP 490 ==============
+>myPC: At time 490 executed a S
+ >myOS: Finished scheduling
+  >Scheduler: suspended process found (19) in the ready queue
+  >Scheduler: selected from the ready queue process 19
 ============== SIMULATION STEP 491 ==============
 >myPC: At time 491 fetched a *
 ============== SIMULATION STEP 492 ==============
 >myPC: At time 492 executed a *
 ============== SIMULATION STEP 493 ==============
->myPC: At time 493 fetched a M
+>myPC: At time 493 fetched a *
 ============== SIMULATION STEP 494 ==============
->myPC: At time 494 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager: No partition was found. Starting Compact Kernel
+>myPC: At time 494 executed a *
 ============== SIMULATION STEP 495 ==============
->myPC: At time 495 fetched a S
+>myPC: At time 495 fetched a *
 ============== SIMULATION STEP 496 ==============
->myPC: At time 496 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 18
-============== SIMULATION STEP 497 ==============
->myPC: At time 497 fetched a P
-============== SIMULATION STEP 498 ==============
->myPC: At time 498 executed a P
- >myOS: Compact partitions
----------------------------------
-Sorted: 
-i: 0 isFree: false
-i: 1 isFree: false
-i: 2 isFree: false
-i: 3 isFree: false
-i: 4 isFree: false
-i: 5 isFree: false
-i: 6 isFree: false
-i: 7 isFree: false
-i: 8 isFree: false
-i: 9 isFree: false
-i: 10 isFree: false
-i: 11 isFree: false
-i: 12 isFree: false
-i: 13 isFree: false
-i: 14 isFree: true
----------------------------------
----------------------------------
-Merged: [MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@6ac5864f, MYSOLUTIONS$Partition@2b525246, MYSOLUTIONS$Partition@3824db2c, MYSOLUTIONS$Partition@60d5a067, MYSOLUTIONS$Partition@26e4a5cc, MYSOLUTIONS$Partition@1f1d1334, MYSOLUTIONS$Partition@17e4640, MYSOLUTIONS$Partition@4c650890, MYSOLUTIONS$Partition@4f2c1e15, MYSOLUTIONS$Partition@38df2077, MYSOLUTIONS$Partition@4b602d6a, MYSOLUTIONS$Partition@2fa59d1e, MYSOLUTIONS$Partition@56f249, MYSOLUTIONS$Partition@414bb6ac]
-i: 0 isFree: false size: 9
-i: 1 isFree: false size: 17
-i: 2 isFree: false size: 17
-i: 3 isFree: false size: 17
-i: 4 isFree: false size: 17
-i: 5 isFree: false size: 17
-i: 6 isFree: false size: 17
-i: 7 isFree: false size: 17
-i: 8 isFree: false size: 17
-i: 9 isFree: false size: 17
-i: 10 isFree: false size: 17
-i: 11 isFree: false size: 17
-i: 12 isFree: false size: 17
-i: 13 isFree: false size: 17
-i: 14 isFree: true size: 10
----------------------------------
-[MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@6ac5864f, MYSOLUTIONS$Partition@2b525246, MYSOLUTIONS$Partition@3824db2c, MYSOLUTIONS$Partition@60d5a067, MYSOLUTIONS$Partition@26e4a5cc, MYSOLUTIONS$Partition@1f1d1334, MYSOLUTIONS$Partition@17e4640, MYSOLUTIONS$Partition@4c650890, MYSOLUTIONS$Partition@4f2c1e15, MYSOLUTIONS$Partition@38df2077, MYSOLUTIONS$Partition@4b602d6a, MYSOLUTIONS$Partition@2fa59d1e, MYSOLUTIONS$Partition@56f249, MYSOLUTIONS$Partition@414bb6ac]
-============== SIMULATION STEP 499 ==============
->myPC: At time 499 fetched a S
-============== SIMULATION STEP 500 ==============
->myPC: At time 500 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 19
-============== SIMULATION STEP 501 ==============
->myPC: At time 501 fetched a *
-============== SIMULATION STEP 502 ==============
->myPC: At time 502 executed a *
-============== SIMULATION STEP 503 ==============
->myPC: At time 503 fetched a *
-============== SIMULATION STEP 504 ==============
->myPC: At time 504 executed a *
-============== SIMULATION STEP 505 ==============
->myPC: At time 505 fetched a *
-============== SIMULATION STEP 506 ==============
->myPC: At time 506 executed a *
-============== SIMULATION STEP 507 ==============
->myPC: At time 507 fetched a *
-============== SIMULATION STEP 508 ==============
->myPC: At time 508 executed a *
-============== SIMULATION STEP 509 ==============
->myPC: At time 509 fetched a $
-============== SIMULATION STEP 510 ==============
->myPC: At time 510 executed a $
- >myOS: Exiting the running process
-============== SIMULATION STEP 511 ==============
->myPC: At time 511 fetched a X
-============== SIMULATION STEP 512 ==============
->myPC: At time 512 executed a X
- >myOS: Finished exiting program 5
-  >Exit: finished exiting process 19. Starting coalesce
->User: Pressed button 3
-============== SIMULATION STEP 513 ==============
->myPC: At time 513 fetched a N
-============== SIMULATION STEP 514 ==============
->myPC: At time 514 executed a N
- >myOS: Coalesce partition 26
-  >Coalesce : No adjacent free partitions to merge.
-  >Coalesce: Finished coalescing partition 26.Starting Process Scheduler
-============== SIMULATION STEP 515 ==============
->myPC: At time 515 fetched a S
-============== SIMULATION STEP 516 ==============
->myPC: At time 516 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 20
-============== SIMULATION STEP 517 ==============
->myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
->myPC: At time 517 fetched a *
-============== SIMULATION STEP 518 ==============
->myPC: At time 518 executed a *
-============== SIMULATION STEP 519 ==============
- >MyOS: suspending process 20
- >MyOS: adding suspended process (20) to ready queue
->myPC: At time 519 fetched a *
-============== SIMULATION STEP 520 ==============
->myPC: At time 520 executed a *
-============== SIMULATION STEP 521 ==============
->myPC: At time 521 fetched a M
-============== SIMULATION STEP 522 ==============
->myPC: At time 522 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager: No partition was found. Starting Compact Kernel
-============== SIMULATION STEP 523 ==============
->myPC: At time 523 fetched a P
-============== SIMULATION STEP 524 ==============
->myPC: At time 524 executed a P
- >myOS: Compact partitions
----------------------------------
-Sorted: 
-i: 0 isFree: false
-i: 1 isFree: false
-i: 2 isFree: false
-i: 3 isFree: false
-i: 4 isFree: false
-i: 5 isFree: false
-i: 6 isFree: false
-i: 7 isFree: false
-i: 8 isFree: false
-i: 9 isFree: false
-i: 10 isFree: false
-i: 11 isFree: false
-i: 12 isFree: false
-i: 13 isFree: true
-i: 14 isFree: true
----------------------------------
----------------------------------
-Merged: [MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@6ac5864f, MYSOLUTIONS$Partition@3824db2c, MYSOLUTIONS$Partition@60d5a067, MYSOLUTIONS$Partition@26e4a5cc, MYSOLUTIONS$Partition@1f1d1334, MYSOLUTIONS$Partition@17e4640, MYSOLUTIONS$Partition@4c650890, MYSOLUTIONS$Partition@4f2c1e15, MYSOLUTIONS$Partition@38df2077, MYSOLUTIONS$Partition@4b602d6a, MYSOLUTIONS$Partition@2fa59d1e, MYSOLUTIONS$Partition@56f249, MYSOLUTIONS$Partition@2b525246, MYSOLUTIONS$Partition@414bb6ac]
-i: 0 isFree: false size: 9
-i: 1 isFree: false size: 17
-i: 2 isFree: false size: 17
-i: 3 isFree: false size: 17
-i: 4 isFree: false size: 17
-i: 5 isFree: false size: 17
-i: 6 isFree: false size: 17
-i: 7 isFree: false size: 17
-i: 8 isFree: false size: 17
-i: 9 isFree: false size: 17
-i: 10 isFree: false size: 17
-i: 11 isFree: false size: 17
-i: 12 isFree: false size: 17
-i: 13 isFree: true size: 27
----------------------------------
-[MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@6ac5864f, MYSOLUTIONS$Partition@3824db2c, MYSOLUTIONS$Partition@60d5a067, MYSOLUTIONS$Partition@26e4a5cc, MYSOLUTIONS$Partition@1f1d1334, MYSOLUTIONS$Partition@17e4640, MYSOLUTIONS$Partition@4c650890, MYSOLUTIONS$Partition@4f2c1e15, MYSOLUTIONS$Partition@38df2077, MYSOLUTIONS$Partition@4b602d6a, MYSOLUTIONS$Partition@2fa59d1e, MYSOLUTIONS$Partition@56f249, MYSOLUTIONS$Partition@2b525246]
-============== SIMULATION STEP 525 ==============
->myPC: At time 525 fetched a S
-============== SIMULATION STEP 526 ==============
->myPC: At time 526 executed a S
- >myOS: Finished scheduling
-  >Scheduler: suspended process found (20) in the ready queue
-  >Scheduler: selected from the ready queue process 20
-============== SIMULATION STEP 527 ==============
->myPC: At time 527 fetched a *
-============== SIMULATION STEP 528 ==============
->myPC: At time 528 executed a *
-============== SIMULATION STEP 529 ==============
->myPC: At time 529 fetched a *
-============== SIMULATION STEP 530 ==============
->myPC: At time 530 executed a *
-============== SIMULATION STEP 531 ==============
->myPC: At time 531 fetched a *
-============== SIMULATION STEP 532 ==============
->myPC: At time 532 executed a *
-============== SIMULATION STEP 533 ==============
->myPC: At time 533 fetched a $
-============== SIMULATION STEP 534 ==============
->myPC: At time 534 executed a $
- >myOS: Exiting the running process
-============== SIMULATION STEP 535 ==============
->myPC: At time 535 fetched a X
-============== SIMULATION STEP 536 ==============
->myPC: At time 536 executed a X
- >myOS: Finished exiting program 5
-  >Exit: finished exiting process 20. Starting coalesce
->User: Pressed button 3
-============== SIMULATION STEP 537 ==============
->myPC: At time 537 fetched a N
-============== SIMULATION STEP 538 ==============
->myPC: At time 538 executed a N
- >myOS: Coalesce partition 43
-  >Coalesce : No adjacent free partitions to merge.
-  >Coalesce: Finished coalescing partition 43.Starting Process Scheduler
-============== SIMULATION STEP 539 ==============
->myPC: At time 539 fetched a S
-============== SIMULATION STEP 540 ==============
->myPC: At time 540 executed a S
- >myOS: Finished scheduling
-  >Scheduler: selected from the ready queue process 21
-============== SIMULATION STEP 541 ==============
->myPC: Keyboard interrupt handled. Request for program3.exe. Staring Memory Manager
->myPC: At time 541 fetched a *
-============== SIMULATION STEP 542 ==============
->myPC: At time 542 executed a *
-============== SIMULATION STEP 543 ==============
- >MyOS: suspending process 21
- >MyOS: adding suspended process (21) to ready queue
->myPC: At time 543 fetched a *
-============== SIMULATION STEP 544 ==============
->myPC: At time 544 executed a *
-============== SIMULATION STEP 545 ==============
->myPC: At time 545 fetched a M
-============== SIMULATION STEP 546 ==============
->myPC: At time 546 executed a M
- >myOS: Finished running memory manager
-  >Memory Manager: No partition was found. Starting Compact Kernel
-============== SIMULATION STEP 547 ==============
->myPC: At time 547 fetched a P
-============== SIMULATION STEP 548 ==============
->myPC: At time 548 executed a P
- >myOS: Compact partitions
----------------------------------
-Sorted: 
-i: 0 isFree: false
-i: 1 isFree: false
-i: 2 isFree: false
-i: 3 isFree: false
-i: 4 isFree: false
-i: 5 isFree: false
-i: 6 isFree: false
-i: 7 isFree: false
-i: 8 isFree: false
-i: 9 isFree: false
-i: 10 isFree: false
-i: 11 isFree: false
-i: 12 isFree: true
-i: 13 isFree: true
----------------------------------
----------------------------------
-Merged: [MYSOLUTIONS$Partition@20fbc3de, MYSOLUTIONS$Partition@6ac5864f, MYSOLUTIONS$Partition@60d5a067, MYSOLUTIONS$Partition@26e4a5cc, MYSOLUTIONS$Partition@1f1d1334, MYSOLUTIONS$Partition@17e4640, MYSOLUTIONS$Partition@4c650890, MYSOLUTIONS$Partition@4f2c1e15, MYSOLUTIONS$Partition@38df2077, MYSOLUTIONS$Partition@4b602d6a, MYSOLUTIONS$Partition@2fa59d1e, MYSOLUTIONS$Partition@56f249, MYSOLUTIONS$Partition@3824db2c, MYSOLUTIO
+>myPC: At time 496 executed a *
+============== SIMULATION STEP
